@@ -66,7 +66,7 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
 }, 10, 3 );
 
 function my_acf_init() {
-    acf_update_setting('google_api_key', 'AIzaSyC_3rfHwHu4mKZBJ7N3esIAsn43JI0OJPM');
+    acf_update_setting('google_api_key', '');
 }
 add_action('acf/init', 'my_acf_init');
 
