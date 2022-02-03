@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<div class="footnotes">	
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-6 col-md-4">
 					<?php bloginfo( $show = 'description' ) ?>  - CNPJ 01.123.456/0001-78
 				</div>
