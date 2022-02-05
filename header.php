@@ -35,6 +35,9 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
         <script src="https://kit.fontawesome.com/c2c2eb9e10.js" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
     </head>
 
 <body <?php body_class(); ?>>
@@ -53,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
     <div class="row">
      <div class="col-11 col-md-10 mx-auto">
-       <nav class="navbar navbar-expand-lg navbar-light" id="menuGlobal">
+       <nav class="navbar navbar-expand-lg navbar-light">
 
           <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" data-link="header-ism"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-ism-br.svg" height="53" alt="Logo do Grupo ISM Brasil" /></a>
 

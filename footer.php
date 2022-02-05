@@ -58,21 +58,27 @@
 					<p class="text-end"><a href="<?php echo get_post_type_archive_link('noticias') ?>" data-link="footer-news">Veja mais notícias</a></p>
 				</div>
 		</div>
-
 		<div class="addresses">
 			<div class="row">
-				<div class="col-10 col-md-6 col-lg-3">
-					unidade 1
+			<div class="swiper-unidades">
+				<div class="swiper-wrapper">
+					<?php
+						query_posts( 'post_type=unidades&orderby=name&post_status=publish' );
+
+						while ( have_posts() ) : the_post();
+						    echo '<div class="swiper-slide"><h4>';
+						    the_title();
+						    echo '</h4><p class="address">';
+							the_field('endereco_da_unidade');
+							echo '</p></div>';
+						endwhile;
+						wp_reset_query();
+						?>
+						<!-- col-10 col-md-6 col-lg-3  -->
 				</div>
-				<div class="col-10 col-md-6 col-lg-3">
-					unidade 2
-				</div>
-				<div class="col-10 col-md-6 col-lg-3">
-					unidade 3
-				</div>
-				<div class="col-10 col-md-6 col-lg-3">
-					unidade 4
-				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
 			</div>
 		</div>
 		<div class="footnotes">	
@@ -92,6 +98,47 @@
 </footer>
 <div class="veryLastBar orangeGradient">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+	const swiper = new Swiper('.swiper-unidades', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+      slidesPerGroup: 1,
+      loop: false,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    })
+
+</script>
 </body>
 </html>
