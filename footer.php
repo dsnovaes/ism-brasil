@@ -63,17 +63,10 @@
 			<div class="swiper-unidades">
 				<div class="swiper-wrapper">
 					<?php
-<<<<<<< HEAD
 						query_posts( 'post_type=unidades&orderby=name&post_status=publish' );
 
 						while ( have_posts() ) : the_post();
 						    echo '<div class="swiper-slide"><h4>';
-=======
-						query_posts( 'post_type=unidades&orderby=name&posts_per_page=' );
-
-						while ( have_posts() ) : the_post();
-						    echo '<div class="col-4 swiper-slide"><h4>';
->>>>>>> a133c479c3cc0eef995616ffd2b9d0e596a6c703
 						    the_title();
 						    echo '</h4><p class="address">';
 							the_field('endereco_da_unidade');
@@ -108,7 +101,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
-<<<<<<< HEAD
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -146,19 +138,6 @@
         prevEl: ".swiper-button-prev",
       },
     })
-=======
-<script>
-	const swiper = new Swiper('.swiper-unidades', {
-		direction: 'horizontal',
-		loop: false,
-		slidesPerView: 4,
-		spaceBetween: 30,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		}
-	})
->>>>>>> a133c479c3cc0eef995616ffd2b9d0e596a6c703
 
 </script>
 </body>

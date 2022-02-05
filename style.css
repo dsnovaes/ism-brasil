@@ -474,9 +474,4 @@ footer .footnotes a.top:hover {
 }
 .swiper .swiper-slide {
     padding: 30px;
-=======
-}
-.swiper-button-next, .swiper-button-prev {
-	color: var(--color-black-transparent) !important;
->>>>>>> a133c479c3cc0eef995616ffd2b9d0e596a6c703
 }
