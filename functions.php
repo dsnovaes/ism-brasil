@@ -7,6 +7,8 @@
     add_image_size( 'archive-news', 344, 200, true );
     add_image_size( 'home-news', 344, 200, true );
     add_image_size( 'single-news', 730, 400, true );
+    add_image_size( 'timeline', 540, 400, true );
+    add_image_size( 'quality-badge', 200, 200, true );
     add_action( 'widgets_init', 'my_register_sidebars' );
 
 function my_register_sidebars() {
