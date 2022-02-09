@@ -79,11 +79,132 @@ get_header();
     </div>
 </div>
             
+<div class="container">
+    <div class="row my-5">
+        <div class="col-11 col-md-12 mx-auto">
+            <h2>Nossos valores</h2>   
+                    <?php
+
+                    // Check rows exists.
+                    if( have_rows('valores') ):
+
+                    // Loop through rows.
+                    while( have_rows('valores') ) : the_row();
+
+                        // Load sub field value.
+                        $name = get_sub_field('valor_name');
+                        $desc = get_sub_field('valor_desc');
+                        // Do something...
+                        ?>
+                        <div class="valor">
+                            <h3><?php echo $name; ?></h3>
+                            <p><?php echo $desc; ?></p>
+                        </div>
+                        <?php
+                    // End loop.
+                    endwhile;
+
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+                    ?>
+        </div>
+    </div>
+</div>
+            
+<div class="container-fluid orangeGradient">
+    <div class="row my-5 py-5">
+        <div class="col-11 col-md-12 mx-auto">
+            <h2>ISM em números</h2>   
+                    <?php
+
+                    // Check rows exists.
+                    if( have_rows('numbers') ):
+
+                    // Loop through rows.
+                    while( have_rows('numbers') ) : the_row();
+
+                        // Load sub field value.
+                        $name = get_sub_field('numbers_item-name');
+                        $desc = get_sub_field('numbers_item-desc');
+                        // Do something...
+                        ?>
+                        <div class="number">
+                            <h3><?php echo $name; ?></h3>
+                            <p><?php echo $desc; ?></p>
+                        </div>
+                        <?php
+                    // End loop.
+                    endwhile;
+
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+                    ?>
+        </div>
+    </div>
+</div>
+            
+<div class="container">
+    <div class="row my-5">
+        <div class="col-11 col-md-12 mx-auto">
+            <h2>Qualidade comprovada</h2>   
+                    <?php
+
+                    // Check rows exists.
+                    if( have_rows('quality_badges') ):
+
+                    // Loop through rows.
+                    while( have_rows('quality_badges') ) : the_row();
+
+                        // Load sub field value.
+                        $name = get_sub_field('quality_badges-name');
+                        $desc = get_sub_field('quality_badges-desc');
+                        $img = get_sub_field('quality_badges-img');
+                        // Do something...
+                        ?>
+                        <div class="number">
+                            <h3><?php echo $name; ?></h3>
+                            <p><?php echo $desc; ?></p>
+                        </div>
+                        <?php
+                    // End loop.
+                    endwhile;
+
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+                    ?>
+        </div>
+    </div>
+</div>
+
 
 <script>
 	const swiper = new Swiper('.swiper-timeline', {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 30,
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+      slidesPerGroup: 1,
       loop: false,
       loopFillGroupWithBlank: true,
       pagination: {

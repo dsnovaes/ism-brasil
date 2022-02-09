@@ -313,7 +313,7 @@ h2 {
 .newsPage .single-news a {
 	color: var(--color-green-primary);
 }
-.marcas img, .noticia article img, .marca img, .single-news img, .bannerHome img, .page-template-template-sobre .size-single-news {
+.marcas img, .noticia article img, .marca img, .single-news img, .bannerHome img, .page-template-template-sobre .size-single-news, .page-template-template-sobre iframe {
 	max-width: 100%;
 	height: auto;
 	border-radius: 4px;
