@@ -37,6 +37,15 @@ get_header();
         <div class="col-11 col-md-8 mx-auto"><?php the_field('text_center') ?></div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-11 col-md-12 mx-auto">
+        <h2>Nossa história</h2>    
+    
+        </div>
+    </div>
+</div>
             
 <?php
 get_footer();
