@@ -44,30 +44,30 @@ get_header();
             <h2>Nossa história</h2>   
             <div class="swiper-timeline">
                 <div class="swiper-wrapper"> 
-            <?php
-
-            // Check rows exists.
-            if( have_rows('timeline') ):
-
-                // Loop through rows.
-                while( have_rows('timeline') ) : the_row();
-
-                    // Load sub field value.
-                    $year = get_sub_field('timeline_year');
-                    $text = get_sub_field('timeline_text');
-                    $img = get_sub_field('timeline_img');
-                    // Do something...
-                    ?>
-                    <div class="swiper-slide"><?php echo $year; ?></div>
                     <?php
-                // End loop.
-                endwhile;
 
-            // No value.
-            else :
-                // Do something...
-            endif;
-            ?>
+                    // Check rows exists.
+                    if( have_rows('timeline') ):
+
+                    // Loop through rows.
+                    while( have_rows('timeline') ) : the_row();
+
+                        // Load sub field value.
+                        $year = get_sub_field('timeline_year');
+                        $text = get_sub_field('timeline_text');
+                        $img = get_sub_field('timeline_img');
+                        // Do something...
+                        ?>
+                        <div class="swiper-slide"><?php echo $year; ?></div>
+                        <?php
+                    // End loop.
+                    endwhile;
+
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+                    ?>
                 </div>
                 <div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
@@ -81,16 +81,6 @@ get_header();
 	const swiper = new Swiper('.swiper-timeline', {
       slidesPerView: 1,
       spaceBetween: 0,
-      loop: false,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
     })
 
 </script>
