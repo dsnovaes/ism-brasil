@@ -44,7 +44,7 @@ function copy(element) {
                 }
                 ?> 
                 <div class="share">
-                    <ul class="sticky-top">
+                    <ul class="sticky-top d-none">
                         <li><a href="https://www.facebook.com/sharer/sharer.php?title=Veja essa notícia!&text=Veja essa notícia: <?php the_title(); ?> Confira mais notícias do Grupo ISM <?php echo get_permalink(); ?>&description=Veja essa notícia!&u=<?php echo get_permalink(); ?>" class="fb rounded-top" data-link="share" title="Compartilhar no Facebook" rel="nofollow noopener"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="https://twitter.com/intent/tweet?text=&title= &description= &status=Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="tw" rel="nofollow noopener"><i class="fab fa-twitter" title="Compartilhar no Twitter" data-link="share"></i></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=&text= 😁 Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="wapp" title="Compartilhar no WhatsApp" rel="nofollow noopener"><i class="fab fa-whatsapp" data-link="share"></i></a></li>
