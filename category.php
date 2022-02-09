@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'content_type': 'Noticias'
-  });
+    'contentGroup': 'Post',
+    'contentLevel': 'Archive'
+    });
 </script>
 <?php
 get_header();

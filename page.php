@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'content_type': 'Page'
-  });
+    'contentGroup': 'Page',
+    'contentLevel': 'Single'
+    });
 </script>
 <?php
 get_header();
