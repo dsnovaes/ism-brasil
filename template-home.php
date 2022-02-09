@@ -19,6 +19,7 @@ get_header();
                     <div class="col-11 col-md-6 col-lg-5 col-xl-4 mb-3 mx-auto">
                         <h1><?php echo the_title(); ?></h1>
                         <?php the_content(); ?> 
+                        <p><a href="<?php echo get_permalink(47); ?>">Conheça nossa história</a></p>
                     </div>
                     <div class="col-11 col-md-6 col-lg-7 col-xl-8 mx-auto">
                         <?php the_post_thumbnail( array( 730 ) ); ?>

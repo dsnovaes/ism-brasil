@@ -183,7 +183,7 @@ get_header();
 </div>
 
 
-<script>
+<!-- <script>
 	const swiper = new Swiper('.swiper-timeline', {
       slidesPerView: 1,
       spaceBetween: 30,
@@ -217,7 +217,7 @@ get_header();
       },
     })
 
-</script>
+</script> -->
 
 <?php
 get_footer();
