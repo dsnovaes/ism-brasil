@@ -1,8 +1,8 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'dimension1': 'Post'
-  });
+    'dimension1': 'Single News'
+    });
 </script>
 <?php
 get_header();
@@ -42,9 +42,15 @@ function copy(element) {
                     echo "<h2 class='subtitulo mt-3'>" . $resumo . "</h2>";
                 }
                 ?> 
-
-                <p class="post-info">Postado em <?php the_date(); ?></p>
-
+                <div class="share">
+                    <ul class="sticky-top">
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?title=Veja essa notícia!&text=Veja essa notícia: <?php the_title(); ?> Confira mais notícias do Grupo ISM <?php echo get_permalink(); ?>&description=Veja essa notícia!&u=<?php echo get_permalink(); ?>" class="fb rounded-top" data-link="share" title="Compartilhar no Facebook" rel="nofollow noopener"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/intent/tweet?text=&title= &description= &status=Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="tw" rel="nofollow noopener"><i class="fab fa-twitter" title="Compartilhar no Twitter" data-link="share"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=&text= 😁 Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="wapp" title="Compartilhar no WhatsApp" rel="nofollow noopener"><i class="fab fa-whatsapp" data-link="share"></i></a></li>
+                        <li><a href="javascript:copy('#link')" class="url rounded-bottom" data-link="share" title="Copiar link da notícia" rel="nofollow noopener"><i class="fas fa-link"></i></a><span class="d-none" id="link"><?php echo get_permalink(); ?></span></li>
+                    </ul>
+                    <p class="post-info">Postado em <?php the_date(); ?></p>
+                </div>
                 <figure class="my-3">
                     <?php the_post_thumbnail( array( 750 ) ); ?>
                     <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>

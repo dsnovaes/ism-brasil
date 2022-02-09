@@ -60,9 +60,22 @@ get_header();
                             opacity: 0.5;
                         }
                     </style>
-                <div class="p-5 mb-4 rounded marca hover-<?php echo $related_post; ?>-marca">
-                <h2><a href="<?php the_permalink(); ?>" data-link="home-brands"><?php the_title(); ?></a></h2>
-                <p><?php the_excerpt(); ?></p>
+                <div class="mb-4 rounded marca p-5 hover-<?php echo $related_post; ?>-marca">
+                    <div class="row align-items-center">
+                        <div class="col-7">
+                            <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
+                            <p><?php the_excerpt(); ?></p>
+                            <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
+                        </div>
+                        <div class="col-4">
+                            <?php 
+                            $image = get_field('packshot');
+                            $size = 'thumbnail';
+                            if( !empty( $image ) ): ?>
+                                <a href="<?php the_permalink(); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div><?php
                         }
@@ -91,16 +104,21 @@ get_header();
                             $related->the_post(); $related_post = get_the_ID(); ?>
             <div class="col-12 col-md-6 col-lg-4 mx-auto">
                 <div class="mb-4 rounded marca">
-                    <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail( array( 430 ) ); ?></a>
+                    <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='home-news'); ?></a>
                     <div class="p-4">
                         <h2><a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_title(); ?></a></h2>
-                        <p><?php the_excerpt(); ?></p>
+                        <p><?php echo get_excerpt(140, 'the_content'); ?></p>
                     </div>
                 </div>
             </div><?php
                         }
                         wp_reset_postdata();
                     } ?>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
+                <a href="<?php echo get_post_type_archive_link('noticias') ?>" data-link="home-news" class="btn-ism">Veja mais notícias</a>
+            </div>
         </div>
     </div>
 </div>

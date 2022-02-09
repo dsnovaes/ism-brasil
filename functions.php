@@ -4,8 +4,9 @@
     add_theme_support( 'menus' );
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 252, 140, true );
-    add_image_size( 'archive-news', 252, 140 );
-    add_image_size( 'home-news', 252, 178 );
+    add_image_size( 'archive-news', 344, 200, true );
+    add_image_size( 'home-news', 344, 200, true );
+    add_image_size( 'single-news', 730, 400, true );
     add_action( 'widgets_init', 'my_register_sidebars' );
 
 function my_register_sidebars() {
@@ -91,5 +92,16 @@ function my_remove_menu_pages() {
   }
 }
 
+function get_excerpt($limit, $source = null){
+
+    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $limit);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    return $excerpt;
+}
 
 ?>

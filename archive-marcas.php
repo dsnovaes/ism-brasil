@@ -42,14 +42,14 @@ get_header();
                             opacity: 0.5;
                         }
                     </style>
-                <div class="mb-5 rounded marca hover-<?php echo $post_id; ?>-marca">
+                <div class="mb-5 rounded marca px-5 py-4 hover-<?php echo $post_id; ?>-marca">
                     <div class="row align-items-center">
-                        <div class="col-7 p-5">
+                        <div class="col-7">
                             <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
                             <p><?php the_excerpt(); ?></p>
                             <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
                         </div>
-                        <div class="col-4 p-3">
+                        <div class="col-4">
                             <?php 
                             $image = get_field('packshot');
                             $size = 'thumbnail';

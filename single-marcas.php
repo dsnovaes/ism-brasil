@@ -153,9 +153,22 @@ oi
                             opacity: 0.5;
                         }
                     </style>
-                <div class="p-5 mb-4 rounded marca hover-<?php echo $related_post; ?>-marca">
-                <h2><a href="<?php the_permalink(); ?>" data-link="brands"><?php the_title(); ?></a></h2>
-                <p><?php the_excerpt(); ?></p>
+                <div class="mb-4 rounded marca p-5 hover-<?php echo $related_post; ?>-marca">
+                    <div class="row align-items-center">
+                        <div class="col-7">
+                            <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
+                            <p><?php the_excerpt(); ?></p>
+                            <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
+                        </div>
+                        <div class="col-4">
+                            <?php 
+                            $image = get_field('packshot');
+                            $size = 'thumbnail';
+                            if( !empty( $image ) ): ?>
+                                <a href="<?php the_permalink(); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div><?php
                         }
