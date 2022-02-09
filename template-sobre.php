@@ -26,14 +26,14 @@ get_header();
         <div class="col-11 col-md-10 mx-auto">
             <div class="row">
                 <div class="col-4"><p><?php the_field('intro') ?></p></div>
-                <div class="col-8"><?php the_post_thumbnail( array( 730,400 ) ); ?></div>
+                <div class="col-8"><?php the_post_thumbnail('single-news') ); ?></div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row my-5">
         <div class="col-11 col-md-8 mx-auto"><?php the_field('text_center') ?></div>
     </div>
 </div>
