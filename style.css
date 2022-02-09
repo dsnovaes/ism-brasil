@@ -1,3 +1,9 @@
+/* this should be at the top of your theme CSS file
+
+ Theme Name:   ism-brasil
+ Author:       Diego Novaes
+ Author URI:   https://diegonovaes.com
+*/
 :root {
     --color-green-primary: #00A256;
     --color-green-secondary: #00B759;

@@ -7,8 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Grupo ISM
- * @since Grupo ISM
+ * @subpackage ism-brasil
+ * @since ism-brasil
  */
 get_header();
 ?>
