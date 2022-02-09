@@ -61,6 +61,7 @@ get_header();
         else :
             // Do something...
         endif;
+        ?>
         </div>
     </div>
 </div>
