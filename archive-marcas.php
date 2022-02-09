@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'content_type': 'Marcas'
-  });
+    'contentGroup': 'Brands',
+    'contentLevel': 'Archive'
+    });
 </script>
 <?php
 get_header();

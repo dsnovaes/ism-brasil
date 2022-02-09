@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-    </head>
+    </head> 
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

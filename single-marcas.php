@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'content_type': 'Marca'
-  });
+    'contentGroup': 'Brands',
+    'contentLevel': 'Single'
+    });
 </script>
 <?php
 /*

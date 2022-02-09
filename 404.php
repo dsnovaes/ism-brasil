@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'dimension1': '404'
-  });
+    'contentGroup': 'Error',
+    'contentLevel': 'Error'
+    });
 </script>
 <?php
 get_header();

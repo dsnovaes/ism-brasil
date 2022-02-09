@@ -1,8 +1,9 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'content_type': 'Home'
-  });
+    'contentGroup': 'Home',
+    'contentLevel': 'Home'
+    });
 </script>
 <?php
 /*

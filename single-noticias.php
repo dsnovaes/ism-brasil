@@ -1,7 +1,8 @@
 <script>
     var dataLayer = [];
     dataLayer.push({
-    'dimension1': 'Single News'
+    'contentGroup': 'News',
+    'contentLevel': 'Single'
     });
 </script>
 <?php
