@@ -58,7 +58,10 @@ get_header();
                         $img = get_sub_field('timeline_img');
                         // Do something...
                         ?>
-                        <div class="swiper-slide"><?php echo $year; ?></div>
+                        <div class="swiper-slide">
+                            <h3><?php echo $year; ?></h3>
+                            <p><?php echo $text; ?></p>
+                        </div>
                         <?php
                     // End loop.
                     endwhile;
@@ -81,6 +84,16 @@ get_header();
 	const swiper = new Swiper('.swiper-timeline', {
       slidesPerView: 1,
       spaceBetween: 0,
+      loop: false,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     })
 
 </script>
