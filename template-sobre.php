@@ -30,7 +30,7 @@ get_header();
 
 <div class="container">
     <div class="row">
-        <div class="col-3"><?php the_field('cor_secundaria') ?></div>
+        <div class="col-3"><?php the_field('intro') ?></div>
         <div class="col-9">aqui vai a imagem</div>
     </div>
 </div>
