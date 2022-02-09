@@ -51,7 +51,7 @@ get_header();
             while( have_rows('timeline') ) : the_row();
 
                 // Load sub field value.
-                $sub_value = get_sub_field('year');
+                $sub_value = get_sub_field('timeline_year');
                 // Do something...
                 echo $sub_value;
             // End loop.
