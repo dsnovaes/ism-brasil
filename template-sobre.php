@@ -25,8 +25,8 @@ get_header();
     <div class="row">
         <div class="col-11 col-md-10 mx-auto">
             <div class="row">
-                <div class="col-4"><p><?php the_field('intro') ?></p></div>
-                <div class="col-8"><?php the_post_thumbnail('single-news'); ?></div>
+                <div class="col-12 col-md-4"><p><?php the_field('intro') ?></p></div>
+                <div class="col-12 col-md-8"><?php the_post_thumbnail('single-news'); ?></div>
             </div>
         </div>
     </div>
@@ -42,7 +42,25 @@ get_header();
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
         <h2>Nossa história</h2>    
-    
+        <?php
+
+        // Check rows exists.
+        if( have_rows('timeline') ):
+
+            // Loop through rows.
+            while( have_rows('timeline') ) : the_row();
+
+                // Load sub field value.
+                $sub_value = get_sub_field('year');
+                // Do something...
+                echo $sub_value;
+            // End loop.
+            endwhile;
+
+        // No value.
+        else :
+            // Do something...
+        endif;
         </div>
     </div>
 </div>
