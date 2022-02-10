@@ -40,7 +40,7 @@ get_header();
     </div>
 </div>
 
-<div class="container my-5 py-5">
+<div class="container my-5 py-5 timeline">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossa história</h2>   
@@ -121,7 +121,11 @@ get_header();
     <div class="container">
         <div class="row my-5 py-5">
             <div class="col-12 mx-auto">
-                <h2>ISM em números</h2>   
+                <div class="row">
+                    <div class="col-11 col-md-4">
+                        <h2>ISM em números</h2>   
+                    </div>
+                    <div class="col-11 col-md-4">
                         <?php
 
                         // Check rows exists.
@@ -135,7 +139,7 @@ get_header();
                             $desc = get_sub_field('numbers_item-desc');
                             // Do something...
                             ?>
-                            <div class="number">
+                            <div class="number mb-5">
                                 <h3><?php echo $name; ?></h3>
                                 <?php echo $desc; ?>
                             </div>
@@ -148,6 +152,8 @@ get_header();
                             // Do something...
                         endif;
                         ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -87,6 +87,9 @@ article p {
 	color:var(--color-grey-secondary);
 	border-color: var(--color-red-primary);
 }
+#menuGlobal li.current-menu-item a:hover, #menuGlobal li.current-post-ancestor a:hover {
+	cursor:default;
+}
 #menuGlobal li a:hover {
 	color:var(--color-grey-secondary);
 	border-color: var(--color-green-primary);
@@ -526,10 +529,16 @@ footer .footnotes a.top:hover {
 .numbers, .numbers h2 {
 	color: #fff;
 }
+.numbers h3 {
+	font-size: 250%;
+	font-weight: bold;
+	line-height: 1.2;
+}
 .quality_badge {
 	border: 1px solid var(--color-grey-medium);
 	border-radius: 4px;
 }
 .quality_badge h3 {
 	color: var(--color-red-primary);
+	font-weight: bold;
 }
