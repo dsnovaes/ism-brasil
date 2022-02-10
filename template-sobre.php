@@ -25,8 +25,8 @@ get_header();
     <div class="row">
         <div class="col-11 col-md-10 mx-auto">
             <div class="row">
-                <div class="col-12 col-md-4"><p><?php the_field('intro') ?></p></div>
-                <div class="col-12 col-md-8"><?php the_post_thumbnail('single-news'); ?></div>
+                <div class="col-12 col-md-10 col-lg-4 mx-auto mb-3"><p><?php the_field('intro') ?></p></div>
+                <div class="col-12 col-md-12 col-lg-8"><?php the_post_thumbnail('single-news'); ?></div>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@ get_header();
     </div>
 </div>
 
-<div class="container">
+<div class="container my-5 py-5">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossa história</h2>   
@@ -81,7 +81,7 @@ get_header();
     </div>
 </div>
             
-<div class="container valores">
+<div class="container valores my-5 py-5">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossos valores</h2>   
@@ -120,7 +120,7 @@ get_header();
 <div class="container-fluid orangeGradient numbers">
     <div class="container">
         <div class="row my-5 py-5">
-            <div class="col-11 col-md-12 mx-auto">
+            <div class="col-12 mx-auto">
                 <h2>ISM em números</h2>   
                         <?php
 
@@ -155,7 +155,7 @@ get_header();
             
 <div class="container">
     <div class="col-11 col-md-12">
-        <div class="row justify-content-center my-5 mx-auto">
+        <div class="row justify-content-center my-5 py-5 mx-auto">
             <h2>Qualidade comprovada</h2>   
                 <?php
                 // Check rows exists.
