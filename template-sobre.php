@@ -34,7 +34,9 @@ get_header();
 
 <div class="container">
     <div class="row my-5">
-        <div class="col-11 col-md-8 mx-auto"><?php the_field('text_center') ?></div>
+        <article id="conteudo">
+            <div class="col-11 col-md-8 mx-auto"><?php the_content(); ?></div>
+        </article>
     </div>
 </div>
 
@@ -79,70 +81,74 @@ get_header();
     </div>
 </div>
             
-<div class="container">
+<div class="container valores">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossos valores</h2>   
-                    <?php
+            <div class="col-11 col-md-8 mx-auto">
+                <?php
 
-                    // Check rows exists.
-                    if( have_rows('valores') ):
+                // Check rows exists.
+                if( have_rows('valores') ):
 
-                    // Loop through rows.
-                    while( have_rows('valores') ) : the_row();
+                // Loop through rows.
+                while( have_rows('valores') ) : the_row();
 
-                        // Load sub field value.
-                        $name = get_sub_field('valor_name');
-                        $desc = get_sub_field('valor_desc');
-                        // Do something...
-                        ?>
-                        <div class="valor">
-                            <h3><?php echo $name; ?></h3>
-                            <p><?php echo $desc; ?></p>
-                        </div>
-                        <?php
-                    // End loop.
-                    endwhile;
-
-                    // No value.
-                    else :
-                        // Do something...
-                    endif;
+                    // Load sub field value.
+                    $name = get_sub_field('valor_name');
+                    $desc = get_sub_field('valor_desc');
+                    // Do something...
                     ?>
+                    <div class="valor">
+                        <h3><?php echo $name; ?></h3>
+                        <p><?php echo $desc; ?></p>
+                    </div>
+                    <?php
+                // End loop.
+                endwhile;
+
+                // No value.
+                else :
+                    // Do something...
+                endif;
+                ?>
+            </div>
         </div>
     </div>
 </div>
             
-<div class="container-fluid orangeGradient">
-    <div class="row my-5 py-5">
-        <div class="col-11 col-md-12 mx-auto">
-            <h2>ISM em números</h2>   
-                    <?php
-
-                    // Check rows exists.
-                    if( have_rows('numbers') ):
-
-                    // Loop through rows.
-                    while( have_rows('numbers') ) : the_row();
-
-                        // Load sub field value.
-                        $name = get_sub_field('numbers_item-name');
-                        $desc = get_sub_field('numbers_item-desc');
-                        // Do something...
-                        ?>
-                        <div class="number">
-                            <h3><?php echo $name; ?></h3>
-                            <p><?php echo $desc; ?></p>
-                        </div>
+<div class="container-fluid orangeGradient numbers">
+    <div class="container">
+        <div class="row my-5 py-5">
+            <div class="col-11 col-md-12 mx-auto">
+                <h2>ISM em números</h2>   
                         <?php
-                    // End loop.
-                    endwhile;
 
-                    // No value.
-                    else :
-                        // Do something...
-                    endif;
-                    ?>
+                        // Check rows exists.
+                        if( have_rows('numbers') ):
+
+                        // Loop through rows.
+                        while( have_rows('numbers') ) : the_row();
+
+                            // Load sub field value.
+                            $name = get_sub_field('numbers_item-name');
+                            $desc = get_sub_field('numbers_item-desc');
+                            // Do something...
+                            ?>
+                            <div class="number">
+                                <h3><?php echo $name; ?></h3>
+                                <p><?php echo $desc; ?></p>
+                            </div>
+                            <?php
+                        // End loop.
+                        endwhile;
+
+                        // No value.
+                        else :
+                            // Do something...
+                        endif;
+                        ?>
+            </div>
         </div>
     </div>
 </div>
@@ -165,7 +171,7 @@ get_header();
                         $img = get_sub_field('quality_badges-img');
                         // Do something...
                         ?>
-                        <div class="number">
+                        <div class="col-11 col-md-3 quality_badge p-4">
                             <h3><?php echo $name; ?></h3>
                             <p><?php echo $desc; ?></p>
                         </div>
