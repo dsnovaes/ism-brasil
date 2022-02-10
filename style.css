@@ -497,7 +497,7 @@ footer .footnotes a.top:hover {
 	font-weight: bold;
 }
 /* swiper de unidades no rodapé */
-.swiper-unidades { 
+.swiper-unidades, .swiper-timeline { 
 	position: relative;
     width: 100%;
     height: 100%;

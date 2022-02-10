@@ -74,7 +74,6 @@
 						endwhile;
 						wp_reset_query();
 						?>
-						<!-- col-10 col-md-6 col-lg-3  -->
 				</div>
 				<div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>

@@ -85,7 +85,7 @@ get_header();
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossos valores</h2>   
-            <div class="col-11 col-md-8 mx-auto">
+            <div class="col-12 col-md-8 mx-auto">
                 <?php
 
                 // Check rows exists.
@@ -137,7 +137,7 @@ get_header();
                             ?>
                             <div class="number">
                                 <h3><?php echo $name; ?></h3>
-                                <p><?php echo $desc; ?></p>
+                                <?php echo $desc; ?>
                             </div>
                             <?php
                         // End loop.
@@ -154,62 +154,42 @@ get_header();
 </div>
             
 <div class="container">
-    <div class="row my-5">
-        <div class="col-11 col-md-12 mx-auto">
+    <div class="col-11 col-md-12">
+        <div class="row justify-content-center my-5 mx-auto">
             <h2>Qualidade comprovada</h2>   
-                    <?php
-
-                    // Check rows exists.
-                    if( have_rows('quality_badges') ):
-
-                    // Loop through rows.
-                    while( have_rows('quality_badges') ) : the_row();
-
-                        // Load sub field value.
-                        $name = get_sub_field('quality_badges-name');
-                        $desc = get_sub_field('quality_badges-desc');
-                        $img = get_sub_field('quality_badges-img');
-                        // Do something...
-                        ?>
-                        <div class="col-11 col-md-3 quality_badge p-4">
-                            <h3><?php echo $name; ?></h3>
-                            <p><?php echo $desc; ?></p>
-                        </div>
-                        <?php
-                    // End loop.
-                    endwhile;
-
-                    // No value.
-                    else :
-                        // Do something...
-                    endif;
-                    ?>
+                <?php
+                // Check rows exists.
+                if( have_rows('quality_badges') ):
+                // Loop through rows.
+                while( have_rows('quality_badges') ) : the_row();
+                // Load sub field value.
+                $name = get_sub_field('quality_badges-name');
+                $desc = get_sub_field('quality_badges-desc');
+                $img = get_sub_field('quality_badges-img');
+                // Do something...
+                ?>
+                <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
+                    <div class="quality_badge p-4">
+                        <h3><?php echo $name; ?></h3>
+                        <?php echo $desc; ?>
+                    </div>
+                </div>
+                <?php
+                // End loop.
+                endwhile;
+                // No value.
+                else :
+                    // Do something...
+                endif;
+            ?>
         </div>
     </div>
 </div>
 
 
-<!-- <script>
+<script>
 	const swiper = new Swiper('.swiper-timeline', {
       slidesPerView: 1,
-      spaceBetween: 30,
-      breakpoints: {
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 30
-        },
-        // when window width is >= 480px
-        480: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        }
-      },
       slidesPerGroup: 1,
       loop: false,
       loopFillGroupWithBlank: true,
@@ -223,7 +203,7 @@ get_header();
       },
     })
 
-</script> -->
+</script>
 
 <?php
 get_footer();
