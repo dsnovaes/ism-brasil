@@ -80,12 +80,30 @@ get_header();
         </div>
     </div>
 </div>
+
+<script>
+var swiper = new Swiper('.swiper-timeline', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    loop: false,
+    loopFillGroupWithBlank: true,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+})
+</script>
             
 <div class="container valores my-5 py-5">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossos valores</h2>   
             <div class="col-12 col-md-8 mx-auto">
+                <div class="row">
                 <?php
 
                 // Check rows exists.
@@ -99,7 +117,7 @@ get_header();
                     $desc = get_sub_field('valor_desc');
                     // Do something...
                     ?>
-                    <div class="valor">
+                    <div class="col-12 col-md-6 valor">
                         <h3><?php echo $name; ?></h3>
                         <p><?php echo $desc; ?></p>
                     </div>
@@ -112,6 +130,7 @@ get_header();
                     // Do something...
                 endif;
                 ?>
+                </div>
             </div>
         </div>
     </div>
@@ -191,25 +210,6 @@ get_header();
         </div>
     </div>
 </div>
-
-
-<script>
-	const swiper = new Swiper('.swiper-timeline', {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      loop: false,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    })
-
-</script>
 
 <?php
 get_footer();

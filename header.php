@@ -7,8 +7,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Grupo ISM
- * @since Grupo ISM
+ * @subpackage ism-brasil
+ * @since ism-brasil
  */
 ?>
 <!doctype html>
@@ -33,10 +33,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon-ism.svg" type="image/x-icon" />
+        <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/favicon-ism-mask.svg" color="#00A256">
+
         <script src="https://kit.fontawesome.com/c2c2eb9e10.js" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     </head> 
 
