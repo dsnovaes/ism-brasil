@@ -1,7 +1,7 @@
 <footer class="greenGradient">
 	<div class="container">
 			<div class="row pt-5 pb-4">
-				<div class="col-10 col-md-6 col-lg-3 mx-auto">
+				<div class="col-11 col-md-6 col-lg-3 mx-auto">
 					<div class="row mb-5 justify-content-between">
 						<div class="col-6 col-md-10">
 							<a href="<?php echo get_home_url(); ?>" data-link="footer-ism"><img src="<?php echo get_template_directory_uri() ?>/img/white-logo.svg" alt="ISM Brasil Logo" height="115" width="186" /></a>
@@ -29,17 +29,17 @@
 					</div>
 				</div>
 
-				<div class="col-10 col-md-6 col-lg-3 mx-auto mb-5">
+				<div class="col-11 col-md-6 col-lg-3 mx-auto mb-5">
 					<p><?php bloginfo( $show = 'description' ) ?></p>
 					<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 				</div>
 
-				<div class="col-10 col-md-6 col-lg-3 mx-auto social mb-5">
+				<div class="col-11 col-md-6 col-lg-3 mx-auto social mb-5">
 					<p>Siga-nos nas redes sociais</p>
 					<?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
 				</div>
 
-				<div class="col-10 col-md-6 col-lg-3 mx-auto news">
+				<div class="col-11 col-md-6 col-lg-3 mx-auto news">
 					<p>Últimas Notícias</p>
 					<ul>
 						<?php

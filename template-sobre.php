@@ -76,6 +76,7 @@ get_header();
                 </div>
                 <div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -89,6 +90,7 @@ var swiper = new Swiper('.swiper-timeline', {
     loopFillGroupWithBlank: true,
     pagination: {
     el: ".swiper-pagination",
+    type: "fraction",
     clickable: true,
     },
     navigation: {
@@ -144,7 +146,7 @@ var swiper = new Swiper('.swiper-timeline', {
                     <div class="col-11 col-md-4">
                         <h2>ISM em números</h2>   
                     </div>
-                    <div class="col-11 col-md-4">
+                    <div class="col-11 col-md-6 col-lg-4">
                         <?php
 
                         // Check rows exists.
