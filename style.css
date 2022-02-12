@@ -402,17 +402,6 @@ h2 {
 	border-top:1px solid rgba(255,255,255,.25);
 	margin-top: 0;
 }
-.page-id-43 #conteudo a[href^="https://www.linkedin"] {
-	border-radius: 30px;
-	padding: 10px 60px 10px 30px;
-	border-bottom: 0;
-	display: inline-block;
-	color: #fff;
-	background: var(--color-green-primary) url(img/external.svg) no-repeat 90% center;
-}
-.page-id-43 #conteudo a[href^="https://www.linkedin"]:hover {
-	opacity: 0.75;
-}
 .btn-ism {
 	border-radius: 30px;
 	padding: 10px 60px;
@@ -463,7 +452,7 @@ footer .social li a[href^="https://www.youtube"] {
 }
 .news li a {
 	background:transparent url(img/white-arrow.svg) no-repeat 90% center;
-	border: 1px solid var(--color-green-primary);
+	border: 1px solid var(--color-black-transparent);
 	color: #fff;
 	border-radius: 4px;
 	padding: 20px 60px 20px 16px;
@@ -472,6 +461,7 @@ footer .social li a[href^="https://www.youtube"] {
 }
 .news li a:hover {
 	background:#fff url(img/red-arrow.svg) no-repeat 95% center;
+	border-color: var(--color-green-primary);
 	color:var(--color-grey-secondary);
 	box-shadow: 0 20px 20px var(--color-black-transparent);
 }
@@ -508,13 +498,13 @@ footer .footnotes a.top:hover {
 	font-weight: bold;
 }
 /* swiper de unidades no rodapé */
-.swiper-unidades, .swiper-timeline { 
+.swiper-unidades, .swiper-timeline, .swiper-testemonials { 
 	position: relative;
     width: 100%;
     height: 100%;
 	overflow: hidden;
 }
-.swiper-button-next, .swiper-button-prev {
+.swiper-unidades .swiper-button-next, .swiper-unidades .swiper-button-prev {
 	color: var(--color-black-transparent) !important;
 }
 .swiper .swiper-slide {
@@ -540,4 +530,43 @@ footer .footnotes a.top:hover {
 .quality_badge h3 {
 	color: var(--color-red-primary);
 	font-weight: bold;
+}
+
+/* TRABALHE CONOSCO */
+
+
+.swiper-testemonials {
+	box-shadow: 0px 0px 40px rgba(0, 162, 86, 0.1);
+	border-radius: 4px;
+}
+.external-jobs {
+	border-radius: 30px;
+	padding: 10px 30px 10px 60px;
+	border-bottom: 0 !important;
+	display: inline-block;
+	color: #fff !important;
+	background: var(--color-green-primary) url(img/external.svg) no-repeat 30px center;
+}
+.external-jobs:hover {
+	opacity: 0.75;
+}
+.swiper-testemonials .swiper-button-next, .swiper-testemonials .swiper-button-prev {
+	color: var(--color-green-primary) !important;
+}
+.swiper-testemonials blockquote {
+	font-weight: bold;
+	font-size: 140%;
+	color: var(--color-grey-secondary);
+}
+.swiper-testemonials h3 {
+	font-weight: bold;
+	font-size: 140%;
+	color: var(--color-green-primary);
+}
+.swiper-testemonials .position {
+	font-size: 90%;
+	color: var(--color-grey-primary);
+}
+.swiper-testemonials img {
+	border-radius: 150px;
 }

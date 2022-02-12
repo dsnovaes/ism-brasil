@@ -103,7 +103,7 @@
         }
       },
       slidesPerGroup: 3,
-      loop: false,
+      loop: true,
       loopFillGroupWithBlank: true,
       pagination: {
         el: ".swiper-pagination",

@@ -46,7 +46,7 @@ get_header();
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossa história</h2>   
-            <div class="swiper-timeline">
+            <div class="swiper swiper-timeline">
                 <div class="swiper-wrapper"> 
                     <?php
 
