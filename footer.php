@@ -125,7 +125,7 @@
 					<a href="#top" class="top" data-link="footer-top">Ir para o topo</a>
 				</div>
 				<div class="col-1 col-md-4 text-end">
-					<a href="https://www.diegonovaes.com" data-link="footer-dev"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the designer Diego Novaes" height="20" width="20" /></a>
+					<a href="https://www.diegonovaes.com" data-link="footer-dev" rel="nofollow"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the designer Diego Novaes" height="20" width="20" /></a>
 				</div>
 			</div>
 		</div>

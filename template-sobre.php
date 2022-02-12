@@ -35,7 +35,9 @@ get_header();
 <div class="container">
     <div class="row my-5">
         <article id="conteudo">
-            <div class="col-11 col-md-8 mx-auto"><?php the_content(); ?></div>
+            <div class="col-11 col-md-8 mx-auto">
+                <?php the_content(); ?>
+            </div>
         </article>
     </div>
 </div>
