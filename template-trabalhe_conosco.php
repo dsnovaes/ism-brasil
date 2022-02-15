@@ -31,6 +31,11 @@ get_header();
         </article>
     </div>
 </div>
+<?php
+
+// Check rows exists.
+if( have_rows('testemonials') ):
+    ?>
 <div class="container-fluid testemonials">
     <div class="container my-5">
         <div class="row my-5">
@@ -38,9 +43,6 @@ get_header();
                 <div class="swiper-testemonials">
                     <div class="swiper-wrapper"> 
                         <?php
-
-                        // Check rows exists.
-                        if( have_rows('testemonials') ):
 
                         // Loop through rows.
                         while( have_rows('testemonials') ) : the_row();
@@ -69,7 +71,6 @@ get_header();
                         // No value.
                         else :
                             // Do something...
-                        endif;
                         ?>
                     </div>
                     <div class="swiper-button-prev"></div>
@@ -79,6 +80,9 @@ get_header();
         </div>
     </div>
 </div>
+<?php
+endif;
+?>
 
 
 <div class="container-fluid highlights">
