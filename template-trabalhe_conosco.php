@@ -80,18 +80,32 @@ if( have_rows('testemonials') ):
         </div>
     </div>
 </div>
+<script>
+var swiper = new Swiper('.swiper-testemonials', {
+    slidesPerView: 1,
+    spaceBetween: 120,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+})
+</script>
 <?php
 endif;
 ?>
 
 
+<?php
+
+// Check rows exists.
+if( have_rows('highlights') ):
+    ?>
 <div class="container-fluid highlights">
     <div class="row my-5">
                     <?php
-
-                    // Check rows exists.
-                    if( have_rows('highlights') ):
-
                     // Loop through rows.
                     while( have_rows('highlights') ) : the_row();
 
@@ -109,27 +123,19 @@ endif;
                     // No value.
                     else :
                         // Do something...
-                    endif;
                     ?>
     </div>
 </div>
+<?php
+endif;
+?>
 
-
+<?php 
+$var = the_field('external_jobs_url');
+if(!isEmpty($var)) { ?>
 <p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
+<?php } ?>
 
-<script>
-var swiper = new Swiper('.swiper-testemonials', {
-    slidesPerView: 1,
-    spaceBetween: 120,
-    slidesPerGroup: 1,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-    },
-})
-</script>
 
 <?php
 get_footer();

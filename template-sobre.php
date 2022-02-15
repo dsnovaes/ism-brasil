@@ -46,7 +46,10 @@ get_header();
         </article>
     </div>
 </div>
-
+<?php
+// Check rows exists.
+if( have_rows('timeline') ):
+?>
 <div class="container my-5 py-5 timeline">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
@@ -54,9 +57,6 @@ get_header();
             <div class="swiper swiper-timeline">
                 <div class="swiper-wrapper"> 
                     <?php
-
-                    // Check rows exists.
-                    if( have_rows('timeline') ):
 
                     // Loop through rows.
                     while( have_rows('timeline') ) : the_row();
@@ -78,7 +78,6 @@ get_header();
                     // No value.
                     else :
                         // Do something...
-                    endif;
                     ?>
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -88,7 +87,6 @@ get_header();
         </div>
     </div>
 </div>
-
 <script>
 var swiper = new Swiper('.swiper-timeline', {
     slidesPerView: 1,
@@ -106,7 +104,14 @@ var swiper = new Swiper('.swiper-timeline', {
     },
 })
 </script>
-            
+<?php
+endif;
+?>
+       
+<?php
+// Check rows exists.
+if( have_rows('valores') ):
+    ?>
 <div class="container valores my-5 py-5">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
@@ -114,10 +119,6 @@ var swiper = new Swiper('.swiper-timeline', {
             <div class="col-12 col-md-8 mx-auto">
                 <div class="row">
                 <?php
-
-                // Check rows exists.
-                if( have_rows('valores') ):
-
                 // Loop through rows.
                 while( have_rows('valores') ) : the_row();
 
@@ -137,14 +138,18 @@ var swiper = new Swiper('.swiper-timeline', {
                 // No value.
                 else :
                     // Do something...
-                endif;
                 ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
-            
+<?php
+endif;
+
+// Check rows exists.
+if( have_rows('numbers') ):
+    ?>            
 <div class="container-fluid orangeGradient numbers">
     <div class="container">
         <div class="row my-5 py-5">
@@ -155,9 +160,6 @@ var swiper = new Swiper('.swiper-timeline', {
                     </div>
                     <div class="col-11 col-md-6 col-lg-4">
                         <?php
-
-                        // Check rows exists.
-                        if( have_rows('numbers') ):
 
                         // Loop through rows.
                         while( have_rows('numbers') ) : the_row();
@@ -179,7 +181,6 @@ var swiper = new Swiper('.swiper-timeline', {
                         // No value.
                         else :
                             // Do something...
-                        endif;
                         ?>
                     </div>
                 </div>
@@ -187,14 +188,16 @@ var swiper = new Swiper('.swiper-timeline', {
         </div>
     </div>
 </div>
-            
+<?php
+endif;
+// Check rows exists.
+if( have_rows('quality_badges') ):
+?>
 <div class="container">
     <div class="col-11 col-md-12">
         <div class="row justify-content-center my-5 py-5 mx-auto">
             <h2>Qualidade comprovada</h2>   
-                <?php
-                // Check rows exists.
-                if( have_rows('quality_badges') ):
+            <?php
                 // Loop through rows.
                 while( have_rows('quality_badges') ) : the_row();
                 // Load sub field value.
@@ -215,12 +218,13 @@ var swiper = new Swiper('.swiper-timeline', {
                 // No value.
                 else :
                     // Do something...
-                endif;
-            ?>
+                ?>
         </div>
     </div>
 </div>
-
+<?php
+endif;
+?>
 <?php
 get_footer();
 ?>
