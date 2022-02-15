@@ -125,8 +125,7 @@ if( have_rows('highlights') ):
 endif;
 ?>
 
-
-
+<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
 
 <?php
 get_footer();

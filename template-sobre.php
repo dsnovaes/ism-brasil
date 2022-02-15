@@ -77,6 +77,7 @@ if( have_rows('timeline') ):
 
                     // No value.
                     else :
+                        echo "No timeline events";
                         // Do something...
                     ?>
                 </div>
