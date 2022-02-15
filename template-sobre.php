@@ -26,7 +26,12 @@ get_header();
         <div class="col-11 col-md-10 mx-auto">
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-4 mx-auto mb-3"><p><?php the_field('intro') ?></p></div>
-                <div class="col-12 col-md-12 col-lg-8"><?php the_post_thumbnail('single-news'); ?></div>
+                <div class="col-12 col-md-12 col-lg-8">
+                    <figure>
+                        <?php the_post_thumbnail('single-news'); ?>
+                        <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
     </div>
@@ -160,6 +165,7 @@ var swiper = new Swiper('.swiper-timeline', {
                             // Load sub field value.
                             $name = get_sub_field('numbers_item-name');
                             $desc = get_sub_field('numbers_item-desc');
+                            $icon = get_sub_field('numbers_item-icon');
                             // Do something...
                             ?>
                             <div class="number mb-5">

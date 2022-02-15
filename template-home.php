@@ -114,14 +114,16 @@ get_header();
                 </div>
             </div><?php
                         }
-                        wp_reset_postdata();
-                    } ?>
-        </div>
+                        wp_reset_postdata(); ?>
+
+</div>
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
                 <a href="<?php echo get_post_type_archive_link('noticias') ?>" data-link="home-news" class="btn-ism">Veja mais notícias</a>
             </div>
         </div>
+<?php
+                    } ?>
     </div>
 </div>
             

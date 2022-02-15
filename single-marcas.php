@@ -30,99 +30,115 @@ get_header();
 </div>
 
 <div class="container marcas" id="conteudo">
-    <div class="col-md-10 col-11 mx-auto">
-        <div class="row">
-            <div class="col-11 col-md-6 col-lg-5 col-xl-4 mb-3 mx-auto">
-                <article>
-                    <?php the_content(); ?>                
-                </article>
-            </div>
-            <div class="col-11 col-md-6 col-lg-7 col-xl-8 mx-auto">
-                <?php the_post_thumbnail( array( 730 ) ); ?>
-            </div>
-        </div>
-        <?php 
-        $flavors = get_field('variacoes');
-        if( !empty( $flavors ) ): ?>
-        <div class="row mt-5">
-            <div class="col-11 col-md-8 mx-auto">
-                <h2>Sabores e Variações</h2>
-                <div class="row variacoes">
-                    <div class="col-11">
-                        <?php echo $flavors; ?>
-                    </div>
+    <div class="row">
+        <div class="col-md-10 col-11 mx-auto">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-5 col-xl-4 mb-3 mx-auto">
+                    <article>
+                        <?php the_content(); ?>                
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-7 col-xl-8 mx-auto">
+                    <?php the_post_thumbnail( array( 730 ) ); ?>
                 </div>
             </div>
+            <div class="container variacoes my-5">
+            <?php 
+                    // Check rows exists.
+                    if( have_rows('variacoes') ):
+            
+                    // Loop through rows.
+                    while( have_rows('variacoes') ) : the_row();
+            
+                        // Load sub field value.
+                        $name = get_sub_field('variacao_name');
+                        $text = get_sub_field('variacao_desc');
+                        $pic = get_sub_field('variacao_packshot');
+                        // Do something...
+                        ?>
+                        <div class="row mt-3 mx-auto pt-3 justify-content-center">
+                            <div class="col-12 col-lg-2 col-md-3">
+                                <img src="<?php echo $pic; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-5">
+                                <h3><?php echo $name; ?></h3>
+                                <?php echo $text; ?>
+                                <p><a href="#" data-link="brands-details">Informações nutricionais</a></p>
+                            </div>
+                        </div>
+                        <?php
+                    // End loop.
+                    endwhile;
+            
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+                    ?>
+            </div>  
         </div>
-        <?php endif; ?>
-
-        <!--
-                    <div class="col-11 col-md-3">
-                        foto
-                    </div>
-                    <div class="col-11 col-md-9">
-                        <h3>Sabor Limão</h3>
-                        <p>Drink-T é o chá preto com frutas que possui baixo teor de açúcar, podendo ser também encontrado no sabor limão que é rico em vitamina C que fortalece o sistema imunológico. Chá preto e limão é a combinação perfeita pois possuem antioxidantes que evitam doenças cardíacas e neurodegenerativas. As propriedades estimulante e diuréticas ajudam a aumentar o metabolismo e eliminar as toxinas. Além de saboroso, Drink-T ajuda a cuidar da saúde e impede o ganho de peso.</p>
-                        <p><a href="#" data-link="brands-details">Informações nutricionais</a></p>
-                    </div>
-                </div>
-                <div class="row variacoes mt-3">
-                    <div class="col-11 col-md-3">
-                        foto
-                    </div>
-                    <div class="col-11 col-md-9">
-                        <h3>Sabor Pêssego</h3>
-                        <p>Um chazinho preto bem gelado já é tudo, ainda mais somado ao pêssego que é uma fruta saborosa muito consumida e que contém especiais propriedades que auxiliam em tratamentos de beleza, além de uma excelente fonte das vitaminas A, B e C, além de alto teor de potássio, sódio, fósforo e carotenoides. Juntando todos os benefícios, Drink-T uniu essas duas potências para oferecer mais sabor e vitalidade aos nossos consumidores.</p>
-                        <p><a href="#" data-link="brands-details">Informações nutricionais</a></p>
-                    </div>-->
+    </div>
+</div>        
 
 
 
-<!-- TESTE NOTICIAS RELACIONADAS A MARCA -->
 
+<!-- NOTICIAS RELACIONADAS A MARCA -->
 
-        <?php 
-        $post_id = get_the_ID();
+<?php
+            $post_id = get_the_ID();
 
-        $related = new WP_Query(
+                    $related = new WP_Query(
                         array(
-                            'category__in'   => 1,
+                            'post_type'   => 'noticias',
+                            'post_status'   => 'publish',
                             'posts_per_page' => 3,
-                            'orderby' => 'date'
+                            'orderby' => 'date',
+                            'meta_key'  => 'qual_marca',
+                            'meta_value'    => $post_id
                         )
                     );
 
-        if( $related->have_posts() ) { 
-            ?>
-
-        <div class="row mt-5">
-            <div class="col-11 col-md-8 mx-auto">
-                <h2>Notícias sobre <?php the_title(); ?></h2>
-                <div class="row">
-                    <div class="col-11">
-
-
-            <?php
-                        while( $related->have_posts() ) { 
+                    if( $related->have_posts() ) { ?>
+<div class="container">
+    <div class="col-10 mx-auto mt-5 newsPage">
+        <h2><?php the_title(); ?> na mídia</h2>
+        <div class="row justify-content-center">
+                        <?php while( $related->have_posts() ) { 
                             $related->the_post(); $related_post = get_the_ID(); ?>
-oi
-        <?php
-            }
-            wp_reset_postdata();
-        } ?>
+            <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                <div class="mb-4 rounded marca">
+                    <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='home-news'); ?></a>
+                    <div class="p-4">
+                        <h2><a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_title(); ?></a></h2>
+                        <p><?php echo get_excerpt(140, 'the_content'); ?></p>
                     </div>
                 </div>
             </div>
+
+<?php
+                        }
+                        wp_reset_postdata();
+                        ?>
         </div>
-
-<!-- TESTE NOTICIAS RELACIONADAS A MARCA -->
-
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
+                <a href="<?php echo get_post_type_archive_link('noticias') ?>" data-link="home-news" class="btn-ism mb-5">Veja todas as notícias</a>
+            </div>
+        </div>
     </div>
 </div>
+<?php
+                    } ?>
+
+
+
+<!-- NOTICIAS RELACIONADAS A MARCA -->
+
 
 <div class="container">
     <div class="col-10 mx-auto mt-5">
-        <h2>Veja também</h2>
+        <h2>Veja outras marcas</h2>
         <div class="row">
             <?php
             $post_id = get_the_ID();
