@@ -95,11 +95,6 @@ var swiper = new Swiper('.swiper-testemonials', {
 </script>
 <?php
 endif;
-?>
-
-
-<?php
-
 // Check rows exists.
 if( have_rows('highlights') ):
     ?>
@@ -130,11 +125,7 @@ if( have_rows('highlights') ):
 endif;
 ?>
 
-<?php 
-$var = get_the_field('external_jobs_url');
-if(!isEmpty($var)) { ?>
-<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
-<?php } ?>
+
 
 
 <?php
