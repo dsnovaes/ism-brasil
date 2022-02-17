@@ -47,8 +47,7 @@ get_header();
     </div>
 </div>
 <?php
-// Check rows exists.
-if( have_rows('timeline') ):
+    if( have_rows('timeline') ):
 ?>
 <div class="container my-5 py-5 timeline">
     <div class="row my-5">
@@ -57,28 +56,17 @@ if( have_rows('timeline') ):
             <div class="swiper swiper-timeline">
                 <div class="swiper-wrapper"> 
                     <?php
-
-                    // Loop through rows.
-                    while( have_rows('timeline') ) : the_row();
-
-                        // Load sub field value.
+                        while( have_rows('timeline') ) : the_row();                        
                         $year = get_sub_field('timeline_year');
                         $text = get_sub_field('timeline_text');
-                        $img = get_sub_field('timeline_img');
-                        // Do something...
-                        ?>
-                        <div class="swiper-slide">
-                            <h3><?php echo $year; ?></h3>
-                            <p><?php echo $text; ?></p>
-                        </div>
-                        <?php
-                    // End loop.
-                    endwhile;
-
-                    // No value.
-                    else :
-                        echo "No timeline events";
-                        // Do something...
+                        $img = get_sub_field('timeline_img');  
+                    ?>
+                    <div class="swiper-slide">
+                        <h3><?php echo $year; ?></h3>
+                        <p><?php echo $text; ?></p>
+                    </div>
+                    <?php
+                        endwhile;
                     ?>
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -88,6 +76,7 @@ if( have_rows('timeline') ):
         </div>
     </div>
 </div>
+
 <script>
 var swiper = new Swiper('.swiper-timeline', {
     slidesPerView: 1,
@@ -103,54 +92,48 @@ var swiper = new Swiper('.swiper-timeline', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
     },
-})
+});
+swiper.on('slideChange', function () {
+    dataLayer.push({
+    'event': 'swipe',
+    'swiper': 'swiper-timeline'
+    });
+});
 </script>
+
 <?php
-endif;
-?>
-       
-<?php
-// Check rows exists.
-if( have_rows('valores') ):
-    ?>
+    else :                    
+    endif;
+    if( have_rows('valores') ):
+?>            
 <div class="container valores my-5 py-5">
     <div class="row my-5">
         <div class="col-11 col-md-12 mx-auto">
             <h2>Nossos valores</h2>   
             <div class="col-12 col-md-8 mx-auto">
                 <div class="row">
-                <?php
-                // Loop through rows.
-                while( have_rows('valores') ) : the_row();
-
-                    // Load sub field value.
-                    $name = get_sub_field('valor_name');
-                    $desc = get_sub_field('valor_desc');
-                    // Do something...
+                    <?php
+                        while( have_rows('valores') ) : the_row();                            
+                        $name = get_sub_field('valor_name');
+                        $desc = get_sub_field('valor_desc');
                     ?>
                     <div class="col-12 col-md-6 valor">
                         <h3><?php echo $name; ?></h3>
                         <p><?php echo $desc; ?></p>
                     </div>
                     <?php
-                // End loop.
-                endwhile;
-
-                // No value.
-                else :
-                    // Do something...
-                ?>
+                        endwhile;
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <?php
-endif;
-
-// Check rows exists.
-if( have_rows('numbers') ):
-    ?>            
+    else :
+    endif;
+    if( have_rows('numbers') ):
+?>            
 <div class="container-fluid orangeGradient numbers">
     <div class="container">
         <div class="row my-5 py-5">
@@ -161,27 +144,17 @@ if( have_rows('numbers') ):
                     </div>
                     <div class="col-11 col-md-6 col-lg-4">
                         <?php
-
-                        // Loop through rows.
-                        while( have_rows('numbers') ) : the_row();
-
-                            // Load sub field value.
+                            while( have_rows('numbers') ) : the_row();
                             $name = get_sub_field('numbers_item-name');
                             $desc = get_sub_field('numbers_item-desc');
-                            $icon = get_sub_field('numbers_item-icon');
-                            // Do something...
-                            ?>
+                            $icon = get_sub_field('numbers_item-icon');    
+                        ?>
                             <div class="number mb-5">
                                 <h3><?php echo $name; ?></h3>
                                 <?php echo $desc; ?>
                             </div>
-                            <?php
-                        // End loop.
-                        endwhile;
-
-                        // No value.
-                        else :
-                            // Do something...
+                        <?php
+                            endwhile;
                         ?>
                     </div>
                 </div>
@@ -190,42 +163,36 @@ if( have_rows('numbers') ):
     </div>
 </div>
 <?php
+else :
 endif;
-// Check rows exists.
 if( have_rows('quality_badges') ):
-?>
+    ?>
 <div class="container">
     <div class="col-11 col-md-12">
         <div class="row justify-content-center my-5 py-5 mx-auto">
             <h2>Qualidade comprovada</h2>   
             <?php
-                // Loop through rows.
                 while( have_rows('quality_badges') ) : the_row();
-                // Load sub field value.
                 $name = get_sub_field('quality_badges-name');
                 $desc = get_sub_field('quality_badges-desc');
                 $img = get_sub_field('quality_badges-img');
-                // Do something...
-                ?>
-                <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
-                    <div class="quality_badge p-4">
-                        <h3><?php echo $name; ?></h3>
-                        <?php echo $desc; ?>
-                    </div>
+            ?>
+            <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
+                <div class="quality_badge p-4">
+                    <h3><?php echo $name; ?></h3>
+                    <?php echo $desc; ?>
                 </div>
-                <?php
-                // End loop.
+            </div>
+            <?php 
                 endwhile;
-                // No value.
-                else :
-                    // Do something...
-                ?>
+            ?>
         </div>
     </div>
 </div>
+
 <?php
+else :
+    
 endif;
-?>
-<?php
 get_footer();
 ?>

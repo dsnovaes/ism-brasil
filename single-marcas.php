@@ -44,17 +44,17 @@ get_header();
             </div>
             <div class="container variacoes my-5">
             <?php 
-                    // Check rows exists.
+                    
                     if( have_rows('variacoes') ):
             
-                    // Loop through rows.
+                    
                     while( have_rows('variacoes') ) : the_row();
             
-                        // Load sub field value.
+                        
                         $name = get_sub_field('variacao_name');
                         $text = get_sub_field('variacao_desc');
                         $pic = get_sub_field('variacao_packshot');
-                        // Do something...
+                        
                         ?>
                         <div class="row mt-3 mx-auto pt-3 justify-content-center">
                             <div class="col-12 col-lg-2 col-md-3">
@@ -67,12 +67,12 @@ get_header();
                             </div>
                         </div>
                         <?php
-                    // End loop.
+                    
                     endwhile;
             
                     // No value.
                     else :
-                        // Do something...
+                        
                     endif;
                     ?>
             </div>  

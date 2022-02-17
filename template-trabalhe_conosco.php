@@ -31,28 +31,26 @@ get_header();
         </article>
     </div>
 </div>
-<?php
-
-// Check rows exists.
-if( have_rows('testemonials') ):
-    ?>
-<div class="container-fluid testemonials">
+<div class="container-fluid testimonials">
     <div class="container my-5">
         <div class="row my-5">
             <div class="col-11 col-md-12 mx-auto">
-                <div class="swiper-testemonials">
+                <div class="swiper-testimonials">
                     <div class="swiper-wrapper"> 
                         <?php
 
-                        // Loop through rows.
-                        while( have_rows('testemonials') ) : the_row();
+                        
+                        if( have_rows('testimonials') ):
 
-                            // Load sub field value.
+                        
+                        while( have_rows('testimonials') ) : the_row();
+
+                            
                             $name = get_sub_field('testemonial_name');
                             $position = get_sub_field('testemonial_position');
                             $text = get_sub_field('testemonial_text');
                             $pic = get_sub_field('testemonial_img');
-                            // Do something...
+                            
                             ?>
                             <div class="row swiper-slide justify-content-center align-items-center">
                                 <div class="col-12 col-md-3 mx-3">
@@ -65,12 +63,13 @@ if( have_rows('testemonials') ):
                                 </div>
                             </div>
                             <?php
-                        // End loop.
+                        
                         endwhile;
 
                         // No value.
                         else :
-                            // Do something...
+                            
+                        endif;
                         ?>
                     </div>
                     <div class="swiper-button-prev"></div>
@@ -80,8 +79,42 @@ if( have_rows('testemonials') ):
         </div>
     </div>
 </div>
+
+
+<div class="container-fluid my-5 highlights">
+    <div class="row my-5">
+                    <?php
+
+                    
+                    if( have_rows('highlights') ):
+
+                    
+                    while( have_rows('highlights') ) : the_row();
+
+                        
+                        $title = get_sub_field('highlight_title');
+                        $text = get_sub_field('highlight_text');
+                        $pic = get_sub_field('highlight_img');
+                        
+                        ?>
+                        <h2><?php echo $title; ?></h2>
+                        <?php
+                    
+                    endwhile;
+
+                    // No value.
+                    else :
+                        
+                    endif;
+                    ?>
+    </div>
+</div>
+
+
+<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
+
 <script>
-var swiper = new Swiper('.swiper-testemonials', {
+var swiper = new Swiper('.swiper-testimonials', {
     slidesPerView: 1,
     spaceBetween: 120,
     slidesPerGroup: 1,
@@ -91,41 +124,14 @@ var swiper = new Swiper('.swiper-testemonials', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
     },
-})
+});
+swiper.on('slideChange', function () {
+    dataLayer.push({
+    'event': 'swipe',
+    'swiper': 'swiper-testimonials'
+    });
+});
 </script>
-<?php
-endif;
-// Check rows exists.
-if( have_rows('highlights') ):
-    ?>
-<div class="container-fluid highlights">
-    <div class="row my-5">
-                    <?php
-                    // Loop through rows.
-                    while( have_rows('highlights') ) : the_row();
-
-                        // Load sub field value.
-                        $title = get_sub_field('highlight_title');
-                        $text = get_sub_field('highlight_text');
-                        $pic = get_sub_field('highlight_img');
-                        // Do something...
-                        ?>
-                        <h2><?php echo $title; ?></h2>
-                        <?php
-                    // End loop.
-                    endwhile;
-
-                    // No value.
-                    else :
-                        // Do something...
-                    ?>
-    </div>
-</div>
-<?php
-endif;
-?>
-
-<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
 
 <?php
 get_footer();
