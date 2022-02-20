@@ -49,29 +49,39 @@ get_header();
 <?php
     if( have_rows('timeline') ):
 ?>
-<div class="container my-5 py-5 timeline">
-    <div class="row my-5">
-        <div class="col-11 col-md-12 mx-auto">
-            <h2>Nossa história</h2>   
-            <div class="swiper swiper-timeline">
-                <div class="swiper-wrapper"> 
-                    <?php
-                        while( have_rows('timeline') ) : the_row();                        
-                        $year = get_sub_field('timeline_year');
-                        $text = get_sub_field('timeline_text');
-                        $img = get_sub_field('timeline_img');  
-                    ?>
-                    <div class="swiper-slide">
-                        <h3><?php echo $year; ?></h3>
-                        <p><?php echo $text; ?></p>
-                    </div>
-                    <?php
-                        endwhile;
-                    ?>
+<div class="container-fluid timeline">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <div class="col-11 mx-auto">
+                    <h2>Nossa história</h2> 
+                </div>  
+                <div class="col-12 mx-auto timeline_featured">
+                    <img src="<?php the_field('timeline_featured-img_desktop'); ?>" alt="Nossa história" class="d-md-block d-none">
+                    <img src="<?php the_field('timeline_featured-img_mobile'); ?>" alt="Nossa história" class="d-md-none d-block"> 
                 </div>
-                <div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
+                <div class="col-11 mx-auto">
+                    <div class="swiper swiper-timeline">
+                        <div class="swiper-wrapper"> 
+                            <?php
+                                while( have_rows('timeline') ) : the_row();                        
+                                $year = get_sub_field('timeline_year');
+                                $text = get_sub_field('timeline_text');
+                                $img = get_sub_field('timeline_img');  
+                            ?>
+                            <div class="swiper-slide">
+                                <h3><?php echo $year; ?></h3>
+                                <p><?php echo $text; ?></p>
+                            </div>
+                            <?php
+                                endwhile;
+                            ?>
+                        </div>
+                        <div class="swiper-page_numbers"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -79,18 +89,14 @@ get_header();
 
 <script>
 var swiper = new Swiper('.swiper-timeline', {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
     loop: false,
-    loopFillGroupWithBlank: true,
     pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-    clickable: true,
+        el: ".swiper-page_numbers",
+        type: 'fraction',
     },
     navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
 swiper.on('slideChange', function () {
@@ -101,25 +107,32 @@ swiper.on('slideChange', function () {
 });
 </script>
 
-<?php
-    else :                    
+<?php                 
     endif;
     if( have_rows('valores') ):
 ?>            
 <div class="container valores my-5 py-5">
     <div class="row my-5">
-        <div class="col-11 col-md-12 mx-auto">
-            <h2>Nossos valores</h2>   
-            <div class="col-12 col-md-8 mx-auto">
+        <div class="col-12 mx-auto">
+            <div class="col-11 mx-auto">
+                <h2>Nossos valores</h2>   
                 <div class="row">
                     <?php
                         while( have_rows('valores') ) : the_row();                            
                         $name = get_sub_field('valor_name');
                         $desc = get_sub_field('valor_desc');
+                        $icon = get_sub_field('valor_icon');
                     ?>
-                    <div class="col-12 col-md-6 valor">
-                        <h3><?php echo $name; ?></h3>
-                        <p><?php echo $desc; ?></p>
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="<?php echo $icon; ?>" alt="<?php echo $name; ?>">
+                            </div>
+                            <div class="col-10">
+                                <h3><?php echo $name; ?></h3>
+                                <p><?php echo $desc; ?></p>
+                            </div>
+                        </div>
                     </div>
                     <?php
                         endwhile;
@@ -130,7 +143,6 @@ swiper.on('slideChange', function () {
     </div>
 </div>
 <?php
-    else :
     endif;
     if( have_rows('numbers') ):
 ?>            
@@ -138,24 +150,32 @@ swiper.on('slideChange', function () {
     <div class="container">
         <div class="row my-5 py-5">
             <div class="col-12 mx-auto">
-                <div class="row">
-                    <div class="col-11 col-md-4">
-                        <h2>ISM em números</h2>   
-                    </div>
-                    <div class="col-11 col-md-6 col-lg-4">
-                        <?php
-                            while( have_rows('numbers') ) : the_row();
-                            $name = get_sub_field('numbers_item-name');
-                            $desc = get_sub_field('numbers_item-desc');
-                            $icon = get_sub_field('numbers_item-icon');    
-                        ?>
-                            <div class="number mb-5">
-                                <h3><?php echo $name; ?></h3>
-                                <?php echo $desc; ?>
+                <div class="col-11 mx-auto">
+                    <div class="row">
+                        <div class="col-11 col-md-5 col-lg-4">
+                            <h2>ISM em números</h2>   
+                        </div>
+                        <div class="col-11 col-md-7 col-lg-6">
+                            
+                            <?php
+                                while( have_rows('numbers') ) : the_row();
+                                $name = get_sub_field('numbers_item-name');
+                                $desc = get_sub_field('numbers_item-desc');
+                                $icon = get_sub_field('numbers_item-icon');    
+                            ?>
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <img src="<?php echo $icon; ?>" alt="<?php echo $name; ?>">
+                                </div>
+                                <div class="col-10">
+                                    <h3><?php echo $name; ?></h3>
+                                    <p><?php echo $desc; ?></p>
+                                </div>
                             </div>
-                        <?php
-                            endwhile;
-                        ?>
+                            <?php
+                                endwhile;
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,36 +183,37 @@ swiper.on('slideChange', function () {
     </div>
 </div>
 <?php
-else :
 endif;
 if( have_rows('quality_badges') ):
     ?>
 <div class="container">
-    <div class="col-11 col-md-12">
-        <div class="row justify-content-center my-5 py-5 mx-auto">
-            <h2>Qualidade comprovada</h2>   
-            <?php
-                while( have_rows('quality_badges') ) : the_row();
-                $name = get_sub_field('quality_badges-name');
-                $desc = get_sub_field('quality_badges-desc');
-                $img = get_sub_field('quality_badges-img');
-            ?>
-            <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
-                <div class="quality_badge p-4">
-                    <h3><?php echo $name; ?></h3>
-                    <?php echo $desc; ?>
+    <div class="col-12 mx-auto">
+        <div class="col-11 mx-auto">
+            <div class="row justify-content-center my-5 py-5 mx-auto">
+                <h2>Qualidade comprovada</h2>   
+                <?php
+                    while( have_rows('quality_badges') ) : the_row();
+                    $name = get_sub_field('quality_badges-name');
+                    $desc = get_sub_field('quality_badges-desc');
+                    $badge = get_sub_field('quality_badges-img');
+                ?>
+                <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
+                    <div class="quality_badge p-4">
+                        <img src="<?php echo $badge; ?>" alt="<?php echo $name; ?>" class="mx-auto">
+                        <h3><?php echo $name; ?></h3>
+                        <?php echo $desc; ?>
+                    </div>
                 </div>
+
+                <?php 
+                    endwhile;
+                ?>
             </div>
-            <?php 
-                endwhile;
-            ?>
         </div>
     </div>
 </div>
 
 <?php
-else :
-    
 endif;
 get_footer();
 ?>

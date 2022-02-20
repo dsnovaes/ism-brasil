@@ -506,7 +506,6 @@ footer .footnotes a.top:hover {
 .swiper-unidades, .swiper-timeline, .swiper-testimonials { 
 	position: relative;
     width: 100%;
-    height: 100%;
 	overflow: hidden;
 }
 .swiper-unidades .swiper-button-next, .swiper-unidades .swiper-button-prev {
@@ -520,6 +519,10 @@ footer .footnotes a.top:hover {
 .valores h3 {
 	color: var(--color-red-primary);
 }
+.valores img, .numbers img {
+	max-width: 100%;
+	height: auto;
+}
 .numbers, .numbers h2 {
 	color: #fff;
 }
@@ -528,15 +531,34 @@ footer .footnotes a.top:hover {
 	font-weight: bold;
 	line-height: 1.2;
 }
+@media screen and (min-width: 1300px) {
+	.numbers {
+		background: url(img/bgNumbers.png) no-repeat -30% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+	}
+}
+@media screen and (min-width: 1150px) and (max-width: 1299px) {
+	.numbers {
+		background: url(img/bgNumbers.png) no-repeat -50% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+	}
+}	
+@media screen and (min-width: 1024px) and (max-width: 1149px) {
+	.numbers {
+		background: url(img/bgNumbers.png) no-repeat -80% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+	}
+}	
 .quality_badge {
 	border: 1px solid var(--color-grey-medium);
 	border-radius: 4px;
+	margin-top: 80px;
 }
 .quality_badge h3 {
 	color: var(--color-red-primary);
 	font-weight: bold;
 }
-
+.quality_badge img{
+	margin: -50% auto 30px auto;
+	max-width: 100%;
+}
 /* TRABALHE CONOSCO */
 
 
@@ -559,6 +581,7 @@ footer .footnotes a.top:hover {
 	box-shadow: 0px 0px 40px rgba(0, 162, 86, 0.1);
 	background-color: #fff;
 	border-radius: 4px;
+	height: 100%;
 	padding: 60px;
 }
 .swiper-testimonials .swiper-button-next, .swiper-testimonials .swiper-button-prev {
@@ -582,6 +605,15 @@ footer .footnotes a.top:hover {
 	border-radius: 150px;
 	width: 100%;
 	height: auto;
+}
+.timeline {
+	background: url(img/bgTimeline.png) no-repeat center 180px;
+}
+.timeline_featured img {
+	border-radius: 4px;
+	width: 100%;
+	height: auto;
+
 }
 .highlights h2 {
 	background: linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%);

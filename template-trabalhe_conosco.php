@@ -31,6 +31,10 @@ get_header();
         </article>
     </div>
 </div>
+
+<?php
+    if( have_rows('testimonials') ):
+?>
 <div class="container-fluid testimonials">
     <div class="container my-5">
         <div class="row my-5">
@@ -38,38 +42,24 @@ get_header();
                 <div class="swiper-testimonials">
                     <div class="swiper-wrapper"> 
                         <?php
-
-                        
-                        if( have_rows('testimonials') ):
-
-                        
-                        while( have_rows('testimonials') ) : the_row();
-
-                            
-                            $name = get_sub_field('testemonial_name');
-                            $position = get_sub_field('testemonial_position');
-                            $text = get_sub_field('testemonial_text');
-                            $pic = get_sub_field('testemonial_img');
-                            
-                            ?>
-                            <div class="row swiper-slide justify-content-center align-items-center">
-                                <div class="col-12 col-md-3 mx-3">
-                                    <img src="<?php echo $pic; ?>" alt="<?php echo $name; ?>">
-                                </div>
-                                <div class="col-12 col-md-7">
-                                    <blockquote><?php echo $text; ?></blockquote>
-                                    <h3><?php echo $name; ?></h3>
-                                    <p class="position"><?php echo $position; ?></p>
-                                </div>
+                            while( have_rows('testimonials') ) : the_row();
+                            $name = get_sub_field('testimonial_name');
+                            $position = get_sub_field('testimonial_position');
+                            $text = get_sub_field('testimonial_text');
+                            $pic = get_sub_field('testimonial_img');
+                        ?>
+                        <div class="row swiper-slide justify-content-center align-items-center">
+                            <div class="col-12 col-md-3 mx-3">
+                                <img src="<?php echo $pic; ?>" alt="<?php echo $name; ?>">
                             </div>
-                            <?php
-                        
-                        endwhile;
-
-                        // No value.
-                        else :
-                            
-                        endif;
+                            <div class="col-12 col-md-7">
+                                <blockquote><?php echo $text; ?></blockquote>
+                                <h3><?php echo $name; ?></h3>
+                                <p class="position"><?php echo $position; ?></p>
+                            </div>
+                        </div>
+                        <?php
+                            endwhile;
                         ?>
                     </div>
                     <div class="swiper-button-prev"></div>
@@ -79,40 +69,6 @@ get_header();
         </div>
     </div>
 </div>
-
-
-<div class="container-fluid my-5 highlights">
-    <div class="row my-5">
-                    <?php
-
-                    
-                    if( have_rows('highlights') ):
-
-                    
-                    while( have_rows('highlights') ) : the_row();
-
-                        
-                        $title = get_sub_field('highlight_title');
-                        $text = get_sub_field('highlight_text');
-                        $pic = get_sub_field('highlight_img');
-                        
-                        ?>
-                        <h2><?php echo $title; ?></h2>
-                        <?php
-                    
-                    endwhile;
-
-                    // No value.
-                    else :
-                        
-                    endif;
-                    ?>
-    </div>
-</div>
-
-
-<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
-
 <script>
 var swiper = new Swiper('.swiper-testimonials', {
     slidesPerView: 1,
@@ -132,6 +88,31 @@ swiper.on('slideChange', function () {
     });
 });
 </script>
+<?php
+    endif;
+    if( have_rows('highlights') ):
+?>
+<div class="container-fluid my-5 highlights">
+    <div class="row my-5">
+                    <?php
+                        while( have_rows('highlights') ) : the_row();
+                        $title = get_sub_field('highlight_title');
+                        $text = get_sub_field('highlight_text');
+                        $pic = get_sub_field('highlight_img');
+                    ?>
+                    <h2><?php echo $title; ?></h2>
+                    <?php
+                        endwhile;
+                    ?>
+    </div>
+</div>
+<?php
+    endif;
+?>
+
+<p class="text-center"><a href="<?php the_field('external_jobs_url'); ?>" class="external-jobs" datalink="careers-button"><?php the_field('external_jobs_label'); ?></a></p>
+
+
 
 <?php
 get_footer();

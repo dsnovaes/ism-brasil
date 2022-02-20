@@ -38,7 +38,22 @@
 
         <script src="https://kit.fontawesome.com/c2c2eb9e10.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "url": "https://grupoism.com.br",
+            "name": "Grupo ISM",
+            "logo": "<?php echo get_template_directory_uri(); ?>/img/logo-ism-br.svg",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://grupoism.com.br/q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            },
+            "areaServed": "Brasil"
+        }
+        </script>
 
     </head> 
 
