@@ -515,7 +515,25 @@ footer .footnotes a.top:hover {
     padding: 30px;
 }
 
-/* SOBRE */
+/* START SOBRE */
+
+.timeline {
+	background: url(img/bgTimeline.jpg) no-repeat center 50px;
+
+}
+.timeline_featured img {
+	border-radius: 4px;
+	width: 100%;
+	height: auto;
+
+}
+.swiper-timeline {
+	height: 100%;
+}
+.swiper-timeline img {
+	max-width: 100%;
+	height: auto;
+}
 .valores h3 {
 	color: var(--color-red-primary);
 }
@@ -549,17 +567,25 @@ footer .footnotes a.top:hover {
 .quality_badge {
 	border: 1px solid var(--color-grey-medium);
 	border-radius: 4px;
-	margin-top: 80px;
+	margin-top: 30px;
+}
+@media screen and (max-width: 767px) {
+	.quality_badge {
+		margin-top: 80px;
+	}
 }
 .quality_badge h3 {
 	color: var(--color-red-primary);
 	font-weight: bold;
 }
 .quality_badge img{
-	margin: -50% auto 30px auto;
+	margin: -30% auto 15px auto;
 	max-width: 100%;
 }
-/* TRABALHE CONOSCO */
+/* END SOBRE */
+
+
+/* START TRABALHE CONOSCO */
 
 
 .external-jobs {
@@ -606,15 +632,6 @@ footer .footnotes a.top:hover {
 	width: 100%;
 	height: auto;
 }
-.timeline {
-	background: url(img/bgTimeline.png) no-repeat center 180px;
-}
-.timeline_featured img {
-	border-radius: 4px;
-	width: 100%;
-	height: auto;
-
-}
 .highlights h2 {
 	background: linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%);
 	background-clip: text;
@@ -631,7 +648,7 @@ footer .footnotes a.top:hover {
 }
 }
 
-/* TRABALHE CONOSCO */
+/* END TRABALHE CONOSCO */
 
 
 

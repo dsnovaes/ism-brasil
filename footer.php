@@ -106,8 +106,8 @@ var swiper = new Swiper('.swiper-unidades', {
 	loop: true,
 	loopFillGroupWithBlank: true,
 	navigation: {
-	nextEl: ".swiper-button-next",
-	prevEl: ".swiper-button-prev",
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
 	}
 });
 swiper.on('slideChange', function () {

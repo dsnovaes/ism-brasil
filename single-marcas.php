@@ -42,11 +42,13 @@ get_header();
                     <?php the_post_thumbnail( array( 730 ) ); ?>
                 </div>
             </div>
-            <div class="container variacoes my-5">
+
             <?php 
                     
                     if( have_rows('variacoes') ):
-            
+                        ?>
+            <div class="container variacoes my-5">
+            <?php 
                     
                     while( have_rows('variacoes') ) : the_row();
             
@@ -54,11 +56,12 @@ get_header();
                         $name = get_sub_field('variacao_name');
                         $text = get_sub_field('variacao_desc');
                         $pic = get_sub_field('variacao_packshot');
+                        $image_url = $pic['sizes']['timeline-featured_mobile'];
                         
                         ?>
                         <div class="row mt-3 mx-auto pt-3 justify-content-center">
                             <div class="col-12 col-lg-2 col-md-3">
-                                <img src="<?php echo $pic; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
+                                <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
                             </div>
                             <div class="col-12 col-lg-6 col-md-5">
                                 <h3><?php echo $name; ?></h3>
@@ -69,13 +72,15 @@ get_header();
                         <?php
                     
                     endwhile;
+                    ?>
+            </div> 
             
-                    // No value.
+            <?php
+            // No value.
                     else :
                         
                     endif;
-                    ?>
-            </div>  
+                    ?> 
         </div>
     </div>
 </div>        

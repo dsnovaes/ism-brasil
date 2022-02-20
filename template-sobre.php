@@ -57,10 +57,16 @@ get_header();
                     <h2>Nossa história</h2> 
                 </div>  
                 <div class="col-12 mx-auto timeline_featured">
-                    <img src="<?php the_field('timeline_featured-img_desktop'); ?>" alt="Nossa história" class="d-md-block d-none">
-                    <img src="<?php the_field('timeline_featured-img_mobile'); ?>" alt="Nossa história" class="d-md-none d-block"> 
+                    <?php
+                        $img_desktop = get_sub_field('timeline_featured-img_desktop');
+                        $image_url_desktop = $img_desktop['sizes']['timeline-featured_desktop'];
+                        $img_mobile = get_sub_field('timeline_featured-img_mobile');
+                        $image_url_mobile = $img_mobile['sizes']['timeline-featured_mobile'];
+                    ?>
+                    <img src="<?= $image_url_desktop; ?>" alt="Nossa história" class="d-md-block d-none">
+                    <img src="<?= $image_url_mobile; ?>" alt="Nossa história" class="d-md-none d-block"> 
                 </div>
-                <div class="col-11 mx-auto">
+                <div class="col-12 mx-auto">
                     <div class="swiper swiper-timeline">
                         <div class="swiper-wrapper"> 
                             <?php
@@ -68,10 +74,16 @@ get_header();
                                 $year = get_sub_field('timeline_year');
                                 $text = get_sub_field('timeline_text');
                                 $img = get_sub_field('timeline_img');  
+                                $image_url = $img['sizes']['timeline'];
                             ?>
-                            <div class="swiper-slide">
-                                <h3><?php echo $year; ?></h3>
-                                <p><?php echo $text; ?></p>
+                            <div class="row swiper-slide">
+                                <div class="col-12 col-md-6">
+                                    <h3><?= $year; ?></h3>
+                                    <p><?= $text; ?></p>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <img src="<?= $image_url; ?>" alt="<?= $year; ?>">
+                                </div>
                             </div>
                             <?php
                                 endwhile;
@@ -89,7 +101,9 @@ get_header();
 
 <script>
 var swiper = new Swiper('.swiper-timeline', {
+	spaceBetween: 0,
     loop: false,
+    
     pagination: {
         el: ".swiper-page_numbers",
         type: 'fraction',
@@ -196,10 +210,11 @@ if( have_rows('quality_badges') ):
                     $name = get_sub_field('quality_badges-name');
                     $desc = get_sub_field('quality_badges-desc');
                     $badge = get_sub_field('quality_badges-img');
+                    $image_url = $badge['sizes']['quality-badge'];
                 ?>
                 <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
                     <div class="quality_badge p-4">
-                        <img src="<?php echo $badge; ?>" alt="<?php echo $name; ?>" class="mx-auto">
+                        <p class="text-center"><img src="<?php echo $badge; ?>" alt="<?php echo $name; ?>" class="mx-auto"></p>
                         <h3><?php echo $name; ?></h3>
                         <?php echo $desc; ?>
                     </div>
