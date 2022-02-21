@@ -88,26 +88,26 @@ get_header();
 
 
 
-<!-- NOTICIAS RELACIONADAS A MARCA -->
+<!-- START NOTICIAS RELACIONADAS A MARCA -->
 
 <?php
-            $post_id = get_the_ID();
+$post_id = get_the_ID();
+$related = new WP_Query(
+    array(
+        'post_type'   => 'noticias',
+        'post_status'   => 'publish',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'meta_key'  => 'qual_marca',
+        'meta_value'    => $post_id
+    )
+);
 
-                    $related = new WP_Query(
-                        array(
-                            'post_type'   => 'noticias',
-                            'post_status'   => 'publish',
-                            'posts_per_page' => 3,
-                            'orderby' => 'date',
-                            'meta_key'  => 'qual_marca',
-                            'meta_value'    => $post_id
-                        )
-                    );
-
-                    if( $related->have_posts() ) { ?>
+if( $related->have_posts() ) { 
+?>
 <div class="container">
     <div class="col-10 mx-auto mt-5 newsPage">
-        <h2><?php the_title(); ?> na mídia</h2>
+        <h2><?php the_title(); ?> é notícia</h2>
         <div class="row justify-content-center">
                         <?php while( $related->have_posts() ) { 
                             $related->the_post(); $related_post = get_the_ID(); ?>
@@ -122,9 +122,9 @@ get_header();
             </div>
 
 <?php
-                        }
-                        wp_reset_postdata();
-                        ?>
+}
+    wp_reset_postdata();
+?>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
@@ -134,32 +134,34 @@ get_header();
     </div>
 </div>
 <?php
-                    } ?>
+} 
+?>
 
 
 
-<!-- NOTICIAS RELACIONADAS A MARCA -->
+<!-- END NOTICIAS RELACIONADAS A MARCA -->
 
 
 <div class="container">
     <div class="col-10 mx-auto mt-5">
         <h2>Veja outras marcas</h2>
         <div class="row">
-            <?php
-            $post_id = get_the_ID();
+<?php
+$post_id = get_the_ID();
 
-                    $related = new WP_Query(
-                        array(
-                            'post_type'   => 'marcas',
-                            'posts_per_page' => 2,
-                            'orderby' => 'rand',
-                            'post__not_in'   => array( $post_id )
-                        )
-                    );
+$related = new WP_Query(
+    array(
+        'post_type'   => 'marcas',
+        'posts_per_page' => 2,
+        'orderby' => 'rand',
+        'post__not_in'   => array( $post_id )
+    )
+);
 
-                    if( $related->have_posts() ) { 
-                        while( $related->have_posts() ) { 
-                            $related->the_post(); $related_post = get_the_ID(); ?>
+if( $related->have_posts() ) { 
+    while( $related->have_posts() ) { 
+        $related->the_post(); $related_post = get_the_ID(); 
+?>
             <div class="col-12 col-md-6 mx-auto">
                 <style type="text/css">
                         .hover-<?php echo $related_post; ?>-marca:hover {
@@ -192,10 +194,12 @@ get_header();
                         </div>
                     </div>
                 </div>
-            </div><?php
-                        }
-                        wp_reset_postdata();
-                    } ?>
+            </div>
+<?php
+}
+    wp_reset_postdata();
+} 
+?>
         </div>
     </div>
 </div>

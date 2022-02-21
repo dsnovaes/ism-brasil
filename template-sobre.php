@@ -53,20 +53,20 @@ get_header();
     <div class="container py-5">
         <div class="row">
             <div class="col-12 mx-auto">
-                <div class="col-11 mx-auto">
+                <div class="col-11 col-md-10 mx-auto">
                     <h2>Nossa história</h2> 
                 </div>  
                 <div class="col-12 mx-auto timeline_featured">
                     <?php
-                        $img_desktop = get_sub_field('timeline_featured-img_desktop');
+                        $img_desktop = get_field('timeline_featured-img_desktop');
                         $image_url_desktop = $img_desktop['sizes']['timeline-featured_desktop'];
-                        $img_mobile = get_sub_field('timeline_featured-img_mobile');
+                        $img_mobile = get_field('timeline_featured-img_mobile');
                         $image_url_mobile = $img_mobile['sizes']['timeline-featured_mobile'];
                     ?>
                     <img src="<?= $image_url_desktop; ?>" alt="Nossa história" class="d-md-block d-none">
                     <img src="<?= $image_url_mobile; ?>" alt="Nossa história" class="d-md-none d-block"> 
                 </div>
-                <div class="col-12 mx-auto">
+                <div class="col-12 col-md-10 mx-auto">
                     <div class="swiper swiper-timeline">
                         <div class="swiper-wrapper"> 
                             <?php
@@ -76,7 +76,7 @@ get_header();
                                 $img = get_sub_field('timeline_img');  
                                 $image_url = $img['sizes']['timeline'];
                             ?>
-                            <div class="row swiper-slide">
+                            <div class="row swiper-slide mx-auto">
                                 <div class="col-12 col-md-6">
                                     <h3><?= $year; ?></h3>
                                     <p><?= $text; ?></p>
@@ -89,9 +89,9 @@ get_header();
                                 endwhile;
                             ?>
                         </div>
-                        <div class="swiper-page_numbers"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                        <div class="swiper-page_numbers"></div>
                     </div>
                 </div>
             </div>
@@ -125,10 +125,10 @@ swiper.on('slideChange', function () {
     endif;
     if( have_rows('valores') ):
 ?>            
-<div class="container valores my-5 py-5">
-    <div class="row my-5">
+<div class="container valores mb-5 py-5">
+    <div class="row mb-5">
         <div class="col-12 mx-auto">
-            <div class="col-11 mx-auto">
+            <div class="col-11 col-md-10 mx-auto">
                 <h2>Nossos valores</h2>   
                 <div class="row">
                     <?php
@@ -157,20 +157,19 @@ swiper.on('slideChange', function () {
     </div>
 </div>
 <?php
-    endif;
-    if( have_rows('numbers') ):
+endif;
+if( have_rows('numbers') ):
 ?>            
 <div class="container-fluid orangeGradient numbers">
     <div class="container">
         <div class="row my-5 py-5">
             <div class="col-12 mx-auto">
-                <div class="col-11 mx-auto">
+                <div class="col-11 col-md-10 mx-auto">
                     <div class="row">
-                        <div class="col-11 col-md-5 col-lg-4">
+                        <div class="col-12 col-md-5 col-lg-4">
                             <h2>ISM em números</h2>   
                         </div>
-                        <div class="col-11 col-md-7 col-lg-6">
-                            
+                        <div class="col-12 col-md-7 col-lg-6">
                             <?php
                                 while( have_rows('numbers') ) : the_row();
                                 $name = get_sub_field('numbers_item-name');
@@ -198,13 +197,47 @@ swiper.on('slideChange', function () {
 </div>
 <?php
 endif;
+?>
+
+<div class="container map_operations">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="col-11 col-md-10 mx-auto">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img src="<?php the_field('map_operations'); ?>" alt="Operação ISM Brasil">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2>Operação ISM Brasil</h2>
+                        <h3>Fábrica</h3>
+                        <ul>
+                            <li>Alagoinhas, BA</li>
+                        </ul>
+                        <h3>Centros de Distribuição</h3>
+                        <ul>
+                            <li>Aracaju, SE</li>
+                            <li>Arapiraca, AL</li>
+                            <li>Feira de Santana, BA</li>
+                            <li>Juazeiro, BA</li>
+                            <li>Itabuna, BA</li>
+                            <li>Salvador, BA</li>
+                            <li><a href="<?php echo esc_url( get_permalink(135) ); ?>">Veja a lista completa e os seus endereços</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
 if( have_rows('quality_badges') ):
     ?>
 <div class="container">
     <div class="col-12 mx-auto">
-        <div class="col-11 mx-auto">
-            <div class="row justify-content-center my-5 py-5 mx-auto">
-                <h2>Qualidade comprovada</h2>   
+        <div class="col-11 col-md-10 my-5 py-5 mx-auto">
+            <h2>Qualidade comprovada</h2>   
+            <div class="row justify-content-center mx-auto">
                 <?php
                     while( have_rows('quality_badges') ) : the_row();
                     $name = get_sub_field('quality_badges-name');
@@ -214,7 +247,7 @@ if( have_rows('quality_badges') ):
                 ?>
                 <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
                     <div class="quality_badge p-4">
-                        <p class="text-center"><img src="<?php echo $badge; ?>" alt="<?php echo $name; ?>" class="mx-auto"></p>
+                        <p class="text-center"><img src="<?php echo $image_url; ?>" alt="<?php echo $name; ?>" class="mx-auto"></p>
                         <h3><?php echo $name; ?></h3>
                         <?php echo $desc; ?>
                     </div>
