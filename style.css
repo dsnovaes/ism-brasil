@@ -594,7 +594,7 @@ footer .footnotes a.top:hover {
 	font-weight: bold;
 	font-size: 140%;
 }
-.map_operations li { 
+.map_operations li, #conteudo li { 
 	list-style-image: url(img/red-arrow.svg); 
 	margin-bottom: 5px;
 } 
