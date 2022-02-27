@@ -9,26 +9,27 @@
 get_header();
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 greenGradient mb-5 mt-3 title">
-            <div class="col-10 mx-auto">
+<div class="greenGradient mx-auto titleBar mt-3 mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-11 col-md-12 mx-auto">
                 <h1><?php $post_type_obj = get_post_type_object( 'marcas' ); echo $post_type_obj->labels->name ?></h1>
             </div>
         </div>
-    </div>
-    <?php $desc = get_the_archive_description();
+    <?php 
+    $desc = get_the_archive_description();
     if (!empty($desc)) { 
         echo "<div class='row'><div class='col-11 mx-auto mb-5'><div class='col-11 mx-auto'>". $desc . "</div></div></div>";
            }  
     ?>
+    </div>
 </div>
 
 <div class="container">
-    <div class="col-10 mx-auto">
+    <div class="col-11 col-md-12 mx-auto">
         <div class="row justify-content-between">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); $post_id = get_the_ID(); ?>
-            <div class="col-12 col-lg-6 mx-auto">
+            <div class="col-12 col-lg-6 mx-auto marcas">
                 <style type="text/css">
                         .hover-<?php echo $post_id; ?>-marca:hover {
                             background-color: <?php the_field('cor_da_marca', $post_id) ?>;
@@ -43,7 +44,7 @@ get_header();
                             opacity: 0.5;
                         }
                     </style>
-                <div class="mb-5 rounded marca px-5 py-4 hover-<?php echo $post_id; ?>-marca">
+                <div class="mb-5 single px-5 py-4 hover-<?php echo $post_id; ?>-marca">
                     <div class="row align-items-center">
                         <div class="col-7">
                             <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>

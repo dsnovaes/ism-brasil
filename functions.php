@@ -6,7 +6,8 @@
     set_post_thumbnail_size( 252, 140, true );
     add_image_size( 'archive-news', 344, 200, true );
     add_image_size( 'home-news', 344, 200, true );
-    add_image_size( 'single-news', 730, 400, true );
+    add_image_size( 'featured', 800, 400, true );
+    add_image_size( 'thumb-news', 420, 210, true );
     add_image_size( 'timeline', 540, 400, true );
     add_image_size( 'timeline-featured_desktop', 1200, 400, true );
     add_image_size( 'timeline-featured_mobile', 640, 640, true );

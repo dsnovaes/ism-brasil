@@ -11,10 +11,10 @@
 */
 get_header();
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-12 greenGradient mb-5 py-3 mt-3 title bannerHome">
-            <div class="col-11 col-md-10 mx-auto">
+<div class="greenGradient mx-auto titleBar mt-3 mb-5 bannerHome py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-11 col-md-12 mx-auto">
                 <div class="row">
                     <div class="col-11 col-md-6 col-lg-5 col-xl-4 mb-3 mx-auto">
                         <h1><?php echo the_title(); ?></h1>
@@ -22,7 +22,7 @@ get_header();
                         <p><a href="<?php echo get_permalink(41); ?>">Conheça nossa história</a></p>
                     </div>
                     <div class="col-11 col-md-6 col-lg-7 col-xl-8 mx-auto">
-                        <?php the_post_thumbnail( array( 730 ) ); ?>
+                        <?php the_post_thumbnail('featured'); ?>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ get_header();
 </div>
 
 <div class="container">
-    <div class="col-10 mx-auto mt-5">
+    <div class="col-11 col-md-12 mx-auto mt-5 marcas">
         <h2>Nossas marcas</h2>
         <div class="row">
             <?php
@@ -62,7 +62,7 @@ get_header();
                             opacity: 0.5;
                         }
                     </style>
-                <div class="mb-4 rounded marca p-5 hover-<?php echo $related_post; ?>-marca">
+                <div class="mb-4 single p-5 hover-<?php echo $related_post; ?>-marca">
                     <div class="row align-items-center">
                         <div class="col-7">
                             <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
@@ -88,7 +88,7 @@ get_header();
 </div>
 
 <div class="container">
-    <div class="col-10 mx-auto mt-5 newsPage">
+    <div class="col-11 col-md-12 mx-auto mt-5 news">
         <h2>Notícias</h2>
         <div class="row">
             <?php
@@ -105,8 +105,8 @@ get_header();
                         while( $related->have_posts() ) { 
                             $related->the_post(); $related_post = get_the_ID(); ?>
             <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                <div class="mb-4 rounded marca">
-                    <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='home-news'); ?></a>
+                <div class="mb-4 single">
+                    <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
                     <div class="p-4">
                         <h2><a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_title(); ?></a></h2>
                         <p><?php echo get_excerpt(140, 'the_content'); ?></p>

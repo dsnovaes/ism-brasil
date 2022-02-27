@@ -66,13 +66,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="veryTopBar orangeGradient"></div>
 <div class="container">
-        <div class="col-12 mx-auto" id="menuSecondary">
+        <div class="col-md-10 col-sm-12 mx-auto" id="menuSecondary">
             <?php wp_nav_menu( array( 'theme_location' => 'top-bar' ) ); ?>
         </div>
 </div>
 <div class="container">
     <div class="row">
-     <div class="col-11 col-md-12 mx-auto">
+     <div class="col-11 col-md-10 mx-auto">
        <nav class="navbar navbar-expand-lg navbar-light">
 
           <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" data-link="header-ism"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-ism-br.svg" height="53" alt="Logo do Grupo ISM Brasil" /></a>

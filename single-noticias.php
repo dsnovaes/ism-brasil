@@ -11,14 +11,14 @@ get_header();
 
 <script>
 function copy(element) {
-        jQuery(function ($) {
-            var $temp = $("<input>");
-            $("body").append($temp);
-            $temp.val($(element).text()).select();
-            document.execCommand("copy");
-            $temp.remove();
-            alert("Link da notícia copiado");
-        });
+    jQuery(function ($) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        alert("Link da notícia copiado");
+    });
 }
 </script>
 <div class="container">
@@ -32,7 +32,7 @@ function copy(element) {
             </ul>
         </div>
 
-        <div class="col-11 col-md-7 mx-auto">
+        <div class="col-11 col-lg-7 mx-auto">
             <article id="conteudo" class="mb-4">
                 <h1><?php echo the_title(); ?></h1>
 
@@ -60,7 +60,7 @@ function copy(element) {
             </article>
         </div>
 
-        <div class="col-11 col-md-4 mx-auto sidebar">
+        <div class="col-11 col-lg-4 mx-auto sidebar">
             <div class="sticky-top">
                 <?php 
                     function verifica() {
@@ -73,7 +73,7 @@ function copy(element) {
                     $related = new WP_Query(
                         array(
                             'post_type'   => 'noticias',
-                            'posts_per_page' => 2,
+                            'posts_per_page' => 1,
                             'post__not_in'   => array( $exclude )
                         )
                     );
@@ -81,9 +81,17 @@ function copy(element) {
                     if( $related->have_posts() ) { 
                         while( $related->have_posts() ) { 
                             $related->the_post(); ?>
-                <a href="<?php the_permalink(); ?>" class="h2 p-4 mb-2 rounded vejaTambem" data-link="related-news">
-                    <h4><?php the_title(); ?></h4>
-                </a><?php
+                        <div class="mb-4 news">
+                            <div class="single">
+                                <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
+                                <div class="pt-4 px-4">
+                                    <h2><a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_title(); ?></a></h2>                            
+                                </div>
+                            </div>
+                        </div>
+
+
+                <?php
                         }
                         wp_reset_postdata();
                     }
@@ -109,9 +117,11 @@ function copy(element) {
                         opacity: 0.5;
                     }
                 </style>
-                <div class="p-5 m-2 rounded marca hover-marca">
-                    <h2><a href="<?php echo get_permalink($id); ?>" data-link="related-brands"><?php echo get_the_title($id); ?></a></h2>
-                    <p><?php echo get_the_excerpt($id); ?></p>
+                <div class="marcas"> 
+                    <div class="p-5 m-2 single hover-marca">
+                        <h2><a href="<?php echo get_permalink($id); ?>" data-link="related-brands"><?php echo get_the_title($id); ?></a></h2>
+                        <p><?php echo get_the_excerpt($id); ?></p>
+                    </div>
                 </div>
 
                         <?php }
