@@ -33,7 +33,7 @@ get_header();
 
 <div class="container">
     <div class="row">
-        <div class="col-11 col-md-12 mx-auto">
+        <div class="col-12 col-md-12 mx-auto">
             <div class="row">
                 <div class="col-12 col-lg-4 mx-auto mb-3"><p><?php the_field('intro') ?></p></div>
                 <div class="col-12 col-lg-8">
