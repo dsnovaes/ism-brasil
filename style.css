@@ -680,7 +680,7 @@ footer .footnotes a.top:hover {
 	box-shadow: 0 20px 20px var(--color-black-transparent);
 }
 
-/* LOOP DE MARCAS */
+/* LOOP DE MARCAS e DETALHES */
 
 .marcas .single {
 	border: 1px solid var(--color-black-transparent);
@@ -725,4 +725,9 @@ footer .footnotes a.top:hover {
 .marcas .single img {
 	max-height: 320px;
 	margin-top: -10px;
+}
+body.single-marcas #conteudo img {
+	border-radius: 4px;
+	max-width: 100%;
+	height: auto;
 }

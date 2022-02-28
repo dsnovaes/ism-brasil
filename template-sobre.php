@@ -11,15 +11,6 @@
 */
 get_header();
 ?>
-<div class="container d-none">
-    <div class="row">
-        <div class="col-11 col-md-12 greenGradient mb-5 mt-3 title">
-            <div class="col-11 col-md-10 mx-auto">
-                <h1><?php echo the_title(); ?></h1>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="greenGradient mx-auto titleBar mt-3 mb-4">
     <div class="container">
@@ -33,7 +24,7 @@ get_header();
 
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-12 mx-auto">
+        <div class="col-11 col-md-12 mx-auto">
             <div class="row">
                 <div class="col-12 col-lg-4 mx-auto mb-3"><p><?php the_field('intro') ?></p></div>
                 <div class="col-12 col-lg-8">

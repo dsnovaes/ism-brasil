@@ -30,7 +30,7 @@ get_header();
     </div>
 </div>
 
-<div class="container marcas" id="conteudo">
+<div class="container" id="conteudo">
     <div class="row justify-content-between">
         <div class="col-11 col-md-6 col-lg-5 mb-3 mx-auto mx-md-0">
             <article>
@@ -177,7 +177,7 @@ if( $related->have_posts() ) {
                 <div class="mb-4 single hover-<?php echo $related_post; ?>-marca">
                     <div class="row align-items-center">
                         <div class="col-7">
-                            <div class="mx-5">
+                            <div class="mx-3 mx-lg-5">
                                 <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
                                 <p><?php the_excerpt(); ?></p>
                                 <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>

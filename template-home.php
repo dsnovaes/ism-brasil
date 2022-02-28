@@ -65,7 +65,7 @@ get_header();
                 <div class="mb-5 single hover-<?php echo $related_post; ?>-marca">
                     <div class="row align-items-center">
                         <div class="col-7">
-                            <div class="mx-5">
+                            <div class="mx-3 mx-lg-5">
                                 <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
                                 <p><?php the_excerpt(); ?></p>
                                 <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
