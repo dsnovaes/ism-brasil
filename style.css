@@ -386,7 +386,7 @@ footer a:hover {
 	text-decoration: none;
 }
 footer ul, .news ul {
-	list-style-type: none;
+	list-style-type: none !important;
 	margin: 0;
 	padding: 0;
 }
@@ -610,6 +610,35 @@ footer .footnotes a.top:hover {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.unidades {
+	background:var(--color-grey-light);
+}
+body.page-template-template-contato ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+body.page-template-template-contato .social ul li a {
+	padding: 5px 10px 10px 40px;
+    margin: 5px 0;
+    display: inline-table;
+}
+body.page-template-template-contato .social li a[href^="https://www.linkedin"] {
+	background:url(img/linkedin.svg) no-repeat 0 0;
+}
+body.page-template-template-contato .social li a[href^="https://www.facebook"] {
+	background:url(img/facebook.svg) no-repeat 0 0;
+}
+body.page-template-template-contato .social li a[href^="https://www.instagram"] {
+	background:url(img/instagram.svg) no-repeat 0 0;
+}
+body.page-template-template-contato .social li a[href^="https://www.youtube"] {
+	background:url(img/youtube.svg) no-repeat 0 0;
+}
+
+
+
+
 
 @media screen and (max-width: 992px) {
 .swiper-testimonials blockquote {
@@ -730,4 +759,7 @@ body.single-marcas #conteudo img {
 	border-radius: 4px;
 	max-width: 100%;
 	height: auto;
+}
+.variacoes img {
+	max-height: 120px;
 }

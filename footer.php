@@ -6,7 +6,7 @@
 						<div class="col-6 col-md-10">
 							<a href="<?php echo get_home_url(); ?>" data-link="footer-ism"><img src="<?php echo get_template_directory_uri() ?>/img/white-logo.svg" alt="ISM Brasil Logo" height="115" width="186" /></a>
 						</div>
-						<div class="col-5 col-md-10">
+						<div class="col-6 col-md-10">
 							<ul class="row mt-4">
 							<?php
 							// A Consulta

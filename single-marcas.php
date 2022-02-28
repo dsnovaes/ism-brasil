@@ -58,8 +58,8 @@ get_header();
         $image_url = $pic['sizes']['timeline-featured_mobile'];
             
     ?>
-    <div class="row variacoes mx-auto justify-content-center">
-        <div class="col-3 col-lg-2 col-md-3">
+    <div class="row variacoes mx-auto justify-content-center mb-3">
+        <div class="col-3 col-lg-2 col-md-3 text-center">
             <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
         </div>
         <div class="col-9 col-lg-6 col-md-5 mb-3">
@@ -185,9 +185,10 @@ if( $related->have_posts() ) {
                         </div>
                         <div class="col-4">
                             <?php 
-                            $image = get_field('packshot');
-                            $size = 'thumbnail';
-                            if( !empty( $image ) ): ?>
+                                $image = get_field('packshot');
+                                $size = 'thumbnail';
+                                if( !empty( $image ) ): 
+                            ?>
                                 <a href="<?php the_permalink(); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></a>
                             <?php endif; ?>
                         </div>

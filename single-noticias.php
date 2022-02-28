@@ -73,7 +73,7 @@ function copy(element) {
                     $related = new WP_Query(
                         array(
                             'post_type'   => 'noticias',
-                            'posts_per_page' => 1,
+                            'posts_per_page' => 2,
                             'post__not_in'   => array( $exclude )
                         )
                     );
@@ -83,9 +83,9 @@ function copy(element) {
                             $related->the_post(); ?>
                         <div class="mb-4 news">
                             <div class="single">
-                                <a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
+                                <a href="<?php the_permalink(); ?>" data-link="related-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
                                 <div class="pt-4 px-4">
-                                    <h2><a href="<?php the_permalink(); ?>" data-link="home-news"><?php the_title(); ?></a></h2>                            
+                                    <h2><a href="<?php the_permalink(); ?>" data-link="related-news"><?php the_title(); ?></a></h2>                            
                                 </div>
                             </div>
                         </div>
@@ -117,12 +117,32 @@ function copy(element) {
                         opacity: 0.5;
                     }
                 </style>
-                <div class="marcas"> 
-                    <div class="p-5 m-2 single hover-marca">
-                        <h2><a href="<?php echo get_permalink($id); ?>" data-link="related-brands"><?php echo get_the_title($id); ?></a></h2>
-                        <p><?php echo get_the_excerpt($id); ?></p>
+
+                <div class="mb-5 marcas">
+                    <div class="single hover-marca">
+                        <div class="row align-items-center">
+                            <div class="col-7">
+                                <div class="mx-3 mx-lg-5">
+                                    <h2><a href="<?php echo get_permalink($id); ?>" data-link="related-brands"><?php echo get_the_title($id); ?></a></h2>
+                                    <?php $excerpt = get_the_excerpt($id); ?>
+                                    <p title="<?= $excerpt ?>"><?= $excerpt ?></p>
+                                    <p><a href="<?php echo get_permalink($id); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <?php 
+                                    $image = get_field('packshot', $id);
+                                    $size = 'thumbnail';
+                                    if( !empty( $image ) ): 
+                                ?>
+                                    <a href="<?php echo get_permalink($id); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                        
+
 
                         <?php }
                     }

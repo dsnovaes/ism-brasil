@@ -67,7 +67,8 @@ get_header();
                         <div class="col-7">
                             <div class="mx-3 mx-lg-5">
                                 <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
-                                <p><?php the_excerpt(); ?></p>
+                                <?php $excerpt = get_the_excerpt(); ?>
+                                <p title="<?= $excerpt ?>"><?= $excerpt ?></p>
                                 <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
                             </div>
                         </div>

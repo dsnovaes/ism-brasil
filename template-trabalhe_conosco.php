@@ -11,10 +11,11 @@
 */
 get_header();
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-12 greenGradient mb-5 mt-3 title">
-            <div class="col-11 col-md-10 mx-auto">
+
+<div class="greenGradient mx-auto titleBar mt-3 mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-11 col-md-12 mx-auto">
                 <h1><?php echo the_title(); ?></h1>
             </div>
         </div>
