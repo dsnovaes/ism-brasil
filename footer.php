@@ -67,17 +67,14 @@
 							query_posts( 'post_type=unidades&orderby=name&post_status=publish' );
 
 							while ( have_posts() ) : the_post();
-								echo '<div class="swiper-slide"><h4>';
-								the_title();
-								echo '</h4><address><a href="';
-								the_field('unidade_local');
-								echo '" data-link="footer-address">';
-								the_field('unidade_enderco');
-								echo '</a></address><p>';
-								the_field('unidade_telefone');
-								echo '</p></div><script>listUnidades.push("';
-								the_title();
-								echo '");</script>';
+								$post_id = get_the_ID();
+								$title = get_the_title();
+								$url = get_field('unidade_local');
+								$address = get_field('unidade_enderco');
+								$phone = get_field('unidade_telefone');
+								echo '<div class="swiper-slide"><h4>' . $title . '</h4>';
+								echo '<address><a href="' . $url . '" data-link="footer-address">' . $address . '</a></address><p>' . $phone . '</p></div>';
+								echo '<script>listUnidades.push({"unidadeID": ' . $post_id . ', "unidadeTitle":"' . $title . '", "unidadeAddress":"' . $address . '", "unidadePhone":"' . $phone . '", "unidadeURL":"' . $url . '", });</script>';
 							endwhile;
 							wp_reset_query();
 							?>

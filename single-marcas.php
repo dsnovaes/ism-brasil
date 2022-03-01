@@ -106,8 +106,8 @@ if( $related->have_posts() ) {
     <div class="col-11 col-md-12 mx-auto mt-5 news">
         <h2><?php the_title(); ?> é notícia</h2>
         <div class="row justify-content-center">
-                        <?php while( $related->have_posts() ) { 
-                            $related->the_post(); $related_post = get_the_ID(); ?>
+            <?php while( $related->have_posts() ) { 
+            $related->the_post(); $related_post = get_the_ID(); ?>
             <div class="col-12 col-md-6 col-lg-4 mx-auto">
                 <div class="mb-4 single">
                     <a href="<?php the_permalink(); ?>" data-link="brands-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
@@ -117,11 +117,10 @@ if( $related->have_posts() ) {
                     </div>
                 </div>
             </div>
-
-<?php
-}
-    wp_reset_postdata();
-?>
+        <?php
+        }
+            wp_reset_postdata();
+        ?>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6 col-lg-4 mx-auto text-center">
@@ -143,22 +142,20 @@ if( $related->have_posts() ) {
     <div class="col-11 col-md-12 mx-auto mt-5">
         <h2>Veja outras marcas</h2>
         <div class="row">
-<?php
-$post_id = get_the_ID();
-
-$related = new WP_Query(
-    array(
-        'post_type'   => 'marcas',
-        'posts_per_page' => 2,
-        'orderby' => 'rand',
-        'post__not_in'   => array( $post_id )
-    )
-);
-
-if( $related->have_posts() ) { 
-    while( $related->have_posts() ) { 
-        $related->the_post(); $related_post = get_the_ID(); 
-?>
+        <?php
+        $post_id = get_the_ID();
+        $related = new WP_Query(
+            array(
+                'post_type'   => 'marcas',
+                'posts_per_page' => 2,
+                'orderby' => 'rand',
+                'post__not_in'   => array( $post_id )
+            )
+        );
+        if( $related->have_posts() ) { 
+            while( $related->have_posts() ) { 
+                $related->the_post(); $related_post = get_the_ID(); 
+        ?>
             <div class="col-12 col-md-6 mx-auto marcas">
                 <style type="text/css">
                         .hover-<?php echo $related_post; ?>-marca:hover {
@@ -195,11 +192,11 @@ if( $related->have_posts() ) {
                     </div>
                 </div>
             </div>
-<?php
-}
-    wp_reset_postdata();
-} 
-?>
+            <?php
+            }
+                wp_reset_postdata();
+            } 
+            ?>
         </div>
     </div>
 </div>

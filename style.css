@@ -725,6 +725,10 @@ body.page-template-template-contato #conteudo .social li a[href^="https://www.yo
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 }
+.news .single h2 {
+	font-size: 140%;
+	margin-bottom: 10px;
+}
 .news .single h2 a {
 	color: var(--color-green-primary);
 }
@@ -735,9 +739,6 @@ body.page-template-template-contato #conteudo .social li a[href^="https://www.yo
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2; /* number of lines to show */
 			line-clamp: 2; 
-}
-.news .single h2 {
-	font-size: 140%;
 }
 
 /* ESTILO DENTRO DA NOTICIA */
