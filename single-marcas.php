@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<div class="greenGradient mx-auto titleBar mt-3 mb-5">
+<div class="greenGradient mx-auto titleBar mt-3 mb-5" style="background:<?php the_field('cor_da_marca'); ?>">
     <div class="container">
         <div class="row">
             <div class="col-11 col-md-12 mx-auto">

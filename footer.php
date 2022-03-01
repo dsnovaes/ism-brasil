@@ -62,15 +62,22 @@
 			<div class="row">
 				<div class="swiper-unidades">
 					<div class="swiper-wrapper">
+						<script> var listUnidades = [] </script>
 						<?php
 							query_posts( 'post_type=unidades&orderby=name&post_status=publish' );
 
 							while ( have_posts() ) : the_post();
 								echo '<div class="swiper-slide"><h4>';
 								the_title();
-								echo '</h4><p class="address">';
-								the_field('endereco_da_unidade');
-								echo '</p></div>';
+								echo '</h4><address><a href="';
+								the_field('unidade_local');
+								echo '" data-link="footer-address">';
+								the_field('unidade_enderco');
+								echo '</a></address><p>';
+								the_field('unidade_telefone');
+								echo '</p></div><script>listUnidades.push("';
+								the_title();
+								echo '");</script>';
 							endwhile;
 							wp_reset_query();
 							?>
@@ -99,7 +106,7 @@ var swiper = new Swiper('.swiper-unidades', {
 	// when window width is >= 640px
 	640: {
 		slidesPerView: 3,
-		spaceBetween: 30
+		spaceBetween: 90
 	}
 	},
 	slidesPerGroup: 3,

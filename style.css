@@ -246,14 +246,14 @@ h2 {
 	color: var(--color-grey-secondary);
 	font-weight: bold;
 }
-#conteudo a, .quality_badge a, .map_operations a {
+#conteudo a, .quality_badge a, .map_operations a, .unidades a {
 	color: var(--color-green-primary);
 	text-decoration: none;
 	border-bottom: 1px var(--color-red-primary) solid;
 	padding-bottom: 2px;
 	margin-top: 2px;
 }
-#conteudo a:hover, .quality_badge a:hover, .map_operations a:hover {
+#conteudo a:hover, .quality_badge a:hover, .map_operations a:hover, .unidades a:hover {
 	color: var(--color-green-secondary);
 	text-decoration: none;
 	border-bottom: 1px var(--color-grey-light) solid;
@@ -422,6 +422,16 @@ footer .addresses {
 	padding: 60px 0;
 
 }
+footer address a {
+	color:#fff;
+	font-size: 100%;
+}
+footer .swiper-unidades {
+	padding:0 60px;
+}
+footer .swiper-unidades p {
+	margin: 0;
+}
 footer .footnotes {
 	border-top:1px solid rgba(255,255,255,.25);
 	color:rgba(255,255,255,.75);
@@ -531,7 +541,7 @@ footer .footnotes a.top:hover {
 	font-weight: bold;
 	font-size: 140%;
 }
-.map_operations li, #conteudo li { 
+.map_operations li, #conteudo li, .unidades li { 
 	list-style-image: url(img/red-arrow.svg); 
 	margin-bottom: 5px;
 } 
@@ -610,47 +620,85 @@ footer .footnotes a.top:hover {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-.unidades {
-	background:var(--color-grey-light);
+
+@media screen and (max-width: 992px) {
+	.swiper-testimonials blockquote {
+		font-size: 100%;
+	}
+	.swiper-testimonials img {
+		margin-bottom: 30px;
+	}
 }
-body.page-template-template-contato ul {
-	list-style-type: none;
+	
+/* END TRABALHE CONOSCO */
+
+
+/* START CONTATO */
+body.page-template-template-contato #conteudo ul {
+	list-style-type: none !important;
 	margin: 0;
 	padding: 0;
 }
-body.page-template-template-contato .social ul li a {
-	padding: 5px 10px 10px 40px;
-    margin: 5px 0;
+body.page-template-template-contato #conteudo .social ul li {
+	list-style-image: none !important;
+}
+body.page-template-template-contato #conteudo .social ul li a {
+	padding: 0 10px 10px 40px;
     display: inline-table;
+	border-bottom: none !important;
+	color: var(--color-red-primary) !important;
 }
-body.page-template-template-contato .social li a[href^="https://www.linkedin"] {
-	background:url(img/linkedin.svg) no-repeat 0 0;
+body.page-template-template-contato #conteudo .social li a[href^="https://www.linkedin"] {
+	background:url(img/contact_linkedin.svg) no-repeat 0 0;
 }
-body.page-template-template-contato .social li a[href^="https://www.facebook"] {
-	background:url(img/facebook.svg) no-repeat 0 0;
+body.page-template-template-contato #conteudo .social li a[href^="https://www.facebook"] {
+	background:url(img/contact_facebook.svg) no-repeat 0 0;
 }
-body.page-template-template-contato .social li a[href^="https://www.instagram"] {
-	background:url(img/instagram.svg) no-repeat 0 0;
+body.page-template-template-contato #conteudo .social li a[href^="https://www.instagram"] {
+	background:url(img/contact_instagram.svg) no-repeat 0 0;
 }
-body.page-template-template-contato .social li a[href^="https://www.youtube"] {
-	background:url(img/youtube.svg) no-repeat 0 0;
+body.page-template-template-contato #conteudo .social li a[href^="https://www.youtube"] {
+	background:url(img/contact_youtube.svg) no-repeat 0 0;
 }
-
-
-
-
-
-@media screen and (max-width: 992px) {
-.swiper-testimonials blockquote {
-	font-size: 100%;
+.unidades {
+	background:var(--color-grey-light);
 }
-.swiper-testimonials img {
+.unidades select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--color-black-transparent);
+	border-radius: 4px;
 	margin-bottom: 30px;
 }
+.unidades h3 {
+	font-weight: bold;
+	font-size: 140%;
+	color: var(--color-grey-secondary);
 }
-
-/* END TRABALHE CONOSCO */
-
+.unidades address {
+	background: url(img/pin.svg) 0 0 no-repeat;
+	padding-left: 24px;
+}
+.unidades iframe {
+	border: 1px solid var(--color-black-transparent);
+}
+.unidades a[href^="tel:"] {
+	background: url(img/phone.svg) 0 0 no-repeat;
+	padding-left: 24px;
+	border-bottom: 0;
+	color: var(--color-grey-primary);
+}
+@media screen and (max-width: 767px) {
+	.unidades a[href^="tel:"] {
+		background: url(img/phone.svg) 20px center no-repeat;
+		padding: 10px 24px 10px 44px;
+		border-bottom: 0;
+		border: 1px solid var(--color-black-transparent-darker);
+		border-radius: 20px;
+		color: var(--color-green-primary);
+	}
+}
+/* END CONTATO */
 
 
 /* MARCAS */
