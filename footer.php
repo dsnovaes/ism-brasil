@@ -73,7 +73,7 @@
 								$address = get_field('unidade_enderco');
 								$phone = get_field('unidade_telefone');
 								echo '<div class="swiper-slide"><h4>' . $title . '</h4>';
-								echo '<address><a href="' . $url . '" data-link="footer-address">' . $address . '</a></address><p>' . $phone . '</p></div>';
+								echo '<address><a href="' . $url . '" data-link="footer-address" rel="nofollow noopener">' . $address . '</a></address><p>' . $phone . '</p></div>';
 								echo '<script>listUnidades.push({"unidadeID": ' . $post_id . ', "unidadeTitle":"' . $title . '", "unidadeAddress":"' . $address . '", "unidadePhone":"' . $phone . '", "unidadeURL":"' . $url . '", });</script>';
 							endwhile;
 							wp_reset_query();
@@ -131,7 +131,7 @@ swiper.on('slideChange', function () {
 					<a href="#top" class="top" data-link="footer-top">Ir para o topo</a>
 				</div>
 				<div class="col-1 col-md-4 text-end">
-					<a href="https://www.diegonovaes.com" data-link="footer-dev" rel="nofollow"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the designer Diego Novaes" height="20" width="20" /></a>
+					<a href="https://www.diegonovaes.com" data-link="footer-dev" rel="nofollow noopener"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the designer Diego Novaes" height="20" width="20" /></a>
 				</div>
 			</div>
 		</div>

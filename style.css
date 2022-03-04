@@ -217,7 +217,7 @@ h1 {
 #menuGlobal li a {
 	margin: 0 10px;
 }
-.menu-trabalhe, .share ul {
+.share ul {
 	display: none;
 }
 }
@@ -659,6 +659,9 @@ body.page-template-template-contato #conteudo .social li a[href^="https://www.in
 }
 body.page-template-template-contato #conteudo .social li a[href^="https://www.youtube"] {
 	background:url(img/contact_youtube.svg) no-repeat 0 0;
+}
+body.page-template-template-contato footer {
+	margin-top: 0;
 }
 .unidades {
 	background:var(--color-grey-light);
