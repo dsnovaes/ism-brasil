@@ -41,7 +41,6 @@ get_header();
             <div class="col-11 col-md-7 mx-auto mb-5">
                 <h2>Nossos números e endereços</h2>
                 <p>Selecione uma unidade e veja os seus detalhes</p>
-                <!--  onChange="dataLayer.push({'event': 'unitChoose', 'unit': 'inserir aqui o nome da unidade'});" -->
                 <select id="unidades">
                     <option>Selecione</option>
                     <?php
@@ -84,7 +83,7 @@ get_header();
         unidadeTelefone.innerHTML = chosenUnidade.unidadePhone;
         unidadeTelefone.attributes[0].value = "tel:0" + chosenUnidade.unidadePhone.replace("-","").replace("(","").replace(")","").replace(" ","");
         unidadeLocal.attributes[0].value = chosenUnidade.unidadeURL + "&output=embed";
-        
+        dataLayer.push({'event': 'unitSelect', 'unit': chosenUnidade.unidadeTitle});
         
     });
 

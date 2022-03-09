@@ -25,9 +25,9 @@ function copy(element) {
     <div class="row mt-3 noticia pt-5">
         <div class="col-1 d-none d-lg-block mb-5 share">
             <ul class="sticky-top">
-                <li><a href="https://www.facebook.com/sharer/sharer.php?title=Veja essa notícia!&text=Veja essa notícia: <?php the_title(); ?> Confira mais notícias do Grupo ISM <?php echo get_permalink(); ?>&description=Veja essa notícia!&u=<?php echo get_permalink(); ?>" class="fb rounded-top" data-link="share" title="Compartilhar no Facebook" rel="nofollow noopener"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/intent/tweet?text=&title= &description= &status=Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="tw" rel="nofollow noopener"><i class="fab fa-twitter" title="Compartilhar no Twitter" data-link="share"></i></a></li>
-                <li><a href="https://api.whatsapp.com/send?phone=&text= 😁 Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="wapp" title="Compartilhar no WhatsApp" rel="nofollow noopener"><i class="fab fa-whatsapp" data-link="share"></i></a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?title=Veja essa notícia!&text=Veja essa notícia: <?php the_title(); ?> Confira mais notícias do Grupo ISM <?php echo get_permalink(); ?>&description=Veja essa notícia!&u=<?php echo get_permalink(); ?>" class="fb rounded-top" data-link="share" social-network="Facebook" title="Compartilhar no Facebook" rel="nofollow noopener"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/intent/tweet?text=&title= &description= &status=Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="tw" rel="nofollow noopener" data-link="share" social-network="Twitter" title="Compartilhar no Twitter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=&text= 😁 Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="wapp" title="Compartilhar no WhatsApp" rel="nofollow noopener" data-link="share" social-network="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
                 <li><a href="javascript:copy('#link')" class="url rounded-bottom" data-link="share" title="Copiar link da notícia" rel="nofollow noopener"><i class="fas fa-link"></i></a><span class="d-none" id="link"><?php echo get_permalink(); ?></span></li>
             </ul>
         </div>
@@ -84,7 +84,7 @@ function copy(element) {
                         <div class="mb-4 news">
                             <div class="single">
                                 <a href="<?php the_permalink(); ?>" data-link="related-news"><?php the_post_thumbnail($size='thumb-news'); ?></a>
-                                <div class="pt-4 px-4">
+                                <div class="p-4">
                                     <h2><a href="<?php the_permalink(); ?>" data-link="related-news"><?php the_title(); ?></a></h2>                            
                                 </div>
                             </div>

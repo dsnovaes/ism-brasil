@@ -102,6 +102,7 @@ swiper.on('slideChange', function () {
                         $pic = get_sub_field('highlight_img');
                     ?>
                     <h2><?php echo $title; ?></h2>
+                    <p><?= $text; ?></p>
                     <?php
                         endwhile;
                     ?>
