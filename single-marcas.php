@@ -30,7 +30,7 @@ get_header();
     </div>
 </div>
 
-<div class="container" id="conteudo">
+<main class="container" id="conteudo">
     <div class="row justify-content-between">
         <div class="col-11 col-md-6 col-lg-5 mb-3 mx-auto mx-md-0">
             <article>
@@ -80,7 +80,7 @@ if( get_sub_field('novo') ) { ?> class="novo"
         
     endif;
 ?> 
-</div>        
+</main>        
 
 
 
@@ -102,9 +102,9 @@ $related = new WP_Query(
 
 if( $related->have_posts() ) { 
 ?>
-<div class="container">
+<aside class="container">
     <div class="col-11 col-md-12 mx-auto mt-5 news">
-        <h2><?php the_title(); ?> é notícia</h2>
+        <h2><?php the_title(); ?> em pauta</h2>
         <div class="row justify-content-center">
             <?php while( $related->have_posts() ) { 
             $related->the_post(); $related_post = get_the_ID(); ?>
@@ -128,7 +128,7 @@ if( $related->have_posts() ) {
             </div>
         </div>
     </div>
-</div>
+</aside>
 <?php
 } 
 ?>
@@ -138,7 +138,7 @@ if( $related->have_posts() ) {
 <!-- END NOTICIAS RELACIONADAS A MARCA -->
 
 
-<div class="container">
+<aside class="container">
     <div class="col-11 col-md-12 mx-auto mt-5">
         <h2>Veja outras marcas</h2>
         <div class="row">
@@ -199,7 +199,7 @@ if( $related->have_posts() ) {
             ?>
         </div>
     </div>
-</div>
+</aside>
             
 <?php
 get_footer();

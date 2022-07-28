@@ -11,7 +11,7 @@
 */
 get_header();
 ?>
-<div class="greenGradient mx-auto titleBar mt-3 mb-5 bannerHome py-3">
+<div class="orangeGradient mx-auto titleBar mt-3 mb-5 bannerHome py-3">
     <div class="container">
         <div class="row">
             <div class="col-11 col-md-12 mx-auto">

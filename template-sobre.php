@@ -54,7 +54,7 @@ get_header();
     <div class="container py-5">
         <div class="row">
             <div class="col-12 mx-auto">
-                    <h2>Nossa história</h2> 
+                    <h2>Conheça nossa história</h2> 
                 <div class="col-12 mx-auto timeline_featured">
                     <?php
                         $img_desktop = get_field('timeline_featured-img_desktop');
@@ -172,7 +172,7 @@ if( have_rows('numbers') ):
                             $desc = get_sub_field('numbers_item-desc');
                             $icon = get_sub_field('numbers_item-icon');    
                         ?>
-                        <div class="row mb-5">
+                        <div class="row my-5">
                             <div class="col-2">
                                 <img src="<?php echo $icon; ?>" alt="<?php echo $name; ?>">
                             </div>
@@ -202,21 +202,7 @@ endif;
                     <img src="<?php the_field('map_operations'); ?>" alt="Operação ISM Brasil">
                 </div>
                 <div class="col-12 col-lg-6">
-                    <h2>Operação ISM Brasil</h2>
-                    <h3>Fábrica</h3>
-                    <ul>
-                        <li>Alagoinhas, BA</li>
-                    </ul>
-                    <h3>Centros de Distribuição</h3>
-                    <ul>
-                        <li>Aracaju, SE</li>
-                        <li>Arapiraca, AL</li>
-                        <li>Feira de Santana, BA</li>
-                        <li>Juazeiro, BA</li>
-                        <li>Itabuna, BA</li>
-                        <li>Salvador, BA</li>
-                        <li><a href="<?php echo esc_url( get_permalink(135) ); ?>">Veja a lista completa e os seus endereços</a></li>
-                    </ul>
+					<?php the_field('text_operations'); ?>
                 </div>
             </div>
         </div>
@@ -230,6 +216,14 @@ if( have_rows('quality_badges') ):
     <div class="col-12 my-5 py-5 mx-auto">
         <h2>Qualidade comprovada</h2>   
         <div class="row justify-content-center mx-auto">
+		
+            <div class="col-12 col-md-6 col-lg-3 mx-auto mb-4">
+                <div class="py-4">
+                    <p class="text-left">
+						<?php the_field('quality_desc'); ?>
+					</p>
+                </div>
+            </div>
             <?php
                 while( have_rows('quality_badges') ) : the_row();
                 $name = get_sub_field('quality_badges-name');

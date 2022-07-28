@@ -123,7 +123,7 @@ body.home h1 {
 	color: var(--color-black-transparent-darker);
 	font-size: 75%;
 }
-body.home .greenGradient h2 {
+body.home .orangeGradient h2 {
 	color: #fff;
 }
 body.home .bannerHome a {
@@ -509,27 +509,27 @@ footer .footnotes a.top:hover {
 
 @media screen and (min-width: 1760px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat left bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bgNumbers.png) no-repeat left 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1500px) and (max-width: 1759px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -20% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bgNumbers.png) no-repeat -20% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1300px) and (max-width: 1499px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -30% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bgNumbers.png) no-repeat -30% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1150px) and (max-width: 1299px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -50% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bgNumbers.png) no-repeat -50% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }	
 @media screen and (min-width: 1024px) and (max-width: 1149px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -80% bottom, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bgNumbers.png) no-repeat -80% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }	
 .map_operations img {

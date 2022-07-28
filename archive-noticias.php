@@ -15,7 +15,8 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-11 col-md-12 mx-auto">
-                <h1><?php $post_type_obj = get_post_type_object( 'noticias' ); echo $post_type_obj->labels->name ?></h1>
+                <h1>ISM em pauta</h1>
+                <?php /* $post_type_obj = get_post_type_object( 'noticias' ); echo $post_type_obj->labels->name */ ?>
             </div>
         </div>
     <?php $desc = get_the_archive_description();
