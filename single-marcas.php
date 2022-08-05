@@ -22,7 +22,7 @@ get_header();
                         <h1><?php echo the_title(); ?></h1>
                     </div>
                     <div class="col-6 text-end">
-                        <p class="m-0"><a href="<?php echo get_post_type_archive_link('marcas') ?>" style="color: <?php the_field('cor_secundaria') ?> !important;" data-link="brands">Conhecer outras marcas</a></p>
+                    <?php if( get_field('where_to_buy') ) { ?> <p class="m-0"><a href="<?php the_field('where_to_buy'); ?>" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Onde comprar <?php echo the_title(); ?></a></p> <?php }?>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,8 @@ get_header();
     <div class="row justify-content-between">
         <div class="col-11 col-md-6 col-lg-5 mb-3 mx-auto mx-md-0">
             <article>
-                <?php the_content(); ?>                
+                <?php the_content(); ?>
+                            
             </article>
         </div>
         <div class="col-12 col-md-6 col-lg-7 text-end">
@@ -50,29 +51,22 @@ get_header();
             <h2>Variações de <?php echo the_title(); ?></h2>
         </div>
     </div>
+    <div class="row variacoes mx-auto justify-content-center mb-3">
     <?php 
         while( have_rows('variacoes') ) : the_row();   
         $name = get_sub_field('variacao_name');
-        $text = get_sub_field('variacao_desc');
         $pic = get_sub_field('variacao_packshot');
         $image_url = $pic['sizes']['timeline-featured_mobile'];
             
     ?>
-    <div class="row variacoes mx-auto justify-content-center mb-3">
-        <div class="col-3 col-lg-2 col-md-3 text-center">
+        <div class="col-6 col-lg-2 col-md-4 text-center">
             <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
+            <h3 <?php if( get_sub_field('novo') ) { ?> class="novo"<?php }?> ><?php echo $name; ?></h3>
         </div>
-        <div class="col-9 col-lg-6 col-md-5 mb-3">
-            <h3 <?php
-if( get_sub_field('novo') ) { ?> class="novo"
-<?php }?> ><?php echo $name; ?></h3>
-            <?php echo $text; ?>
-            <p><a href="#" data-link="brands-details">Informações nutricionais</a></p>
-        </div>
-    </div>
 <?php
     endwhile;
 ?>  
+</div>
             
 <?php
 // No value.

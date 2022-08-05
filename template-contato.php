@@ -39,7 +39,7 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-11 col-md-7 mx-auto mb-5">
-                <h2>Nossos números e endereços</h2>
+                <h2>Onde estamos</h2>
                 <p>Selecione uma unidade e veja os seus detalhes</p>
                 <!--  onChange="dataLayer.push({'event': 'unitChoose', 'unit': 'inserir aqui o nome da unidade'});" -->
                 <select id="unidades">

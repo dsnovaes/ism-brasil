@@ -127,7 +127,7 @@ swiper.on('slideChange', function () {
 <div class="container valores mb-5 py-5">
     <div class="row mb-5">
         <div class="col-12 mx-auto">
-            <h2>Nossos valores</h2>   
+            <h2>Nossos valores</h2>  
             <div class="row">
                 <?php
                     while( have_rows('valores') ) : the_row();                            
@@ -149,6 +149,50 @@ swiper.on('slideChange', function () {
                 <?php
                     endwhile;
                 ?>
+            </div> 
+        </div>
+    </div>
+</div>
+<?php
+endif;
+?>                
+<div class="container valores mb-5 py-5">
+    <div class="row mb-5">
+        <div class="col-12 mx-auto">
+            <h2>Missão e Visão</h2>   
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3>Missão</h3>
+                    <p><?php the_field('mission'); ?></p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>Visão</h3>
+                    <p><?php the_field('vision'); ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+if( have_rows('leaders') ):
+?>            
+<div class="container valores mb-5 py-5">
+    <div class="row mb-5">
+        <div class="col-12 mx-auto">
+            <h2>Nossa equipe de líderes</h2>   
+            <div class="row">
+                <?php
+                    while( have_rows('leaders') ) : the_row();                            
+                    $name = get_sub_field('leader_name');
+                    $position = get_sub_field('leader_position');
+                ?>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h3><?php echo $name; ?></h3>
+                    <p><?php echo $position; ?></p>
+                </div>
+                <?php
+                    endwhile;
+                ?>
             </div>
         </div>
     </div>
@@ -162,7 +206,7 @@ if( have_rows('numbers') ):
         <div class="row my-5 py-5">
             <div class="col-12 mx-auto">
                 <div class="row">
-                    <div class="col-12 col-md-5 col-lg-4">
+                    <div class="col-12 col-md-3 col-lg-4">
                         <h2>ISM em números</h2>   
                     </div>
                     <div class="col-12 col-md-7 col-lg-6">
