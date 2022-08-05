@@ -22,7 +22,7 @@ get_header();
                         <h1><?php echo the_title(); ?></h1>
                     </div>
                     <div class="col-6 text-end">
-                    <?php if( get_field('where_to_buy') ) { ?> <p class="m-0"><a href="<?php the_field('where_to_buy'); ?>" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Onde comprar <?php echo the_title(); ?></a></p> <?php }?>
+                    <?php if( get_field('where_to_buy') ) { ?> <p class="m-0"><a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy" rel="noopener" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Onde comprar <?php echo the_title(); ?></a></p> <?php }?>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ get_header();
         <div class="col-11 col-md-6 col-lg-5 mb-3 mx-auto mx-md-0">
             <article>
                 <?php the_content(); ?>
-                            
+                <?php if( get_field('hotsite') ) { ?><p><a href="<?php the_field('hotsite'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=hotsite" rel="noopener nofollow">Conheça mais sobre <?php echo the_title(); ?></a></p><?php }?>
             </article>
         </div>
         <div class="col-12 col-md-6 col-lg-7 text-end">
@@ -47,7 +47,7 @@ get_header();
     if( have_rows('variacoes') ):
 ?>
     <div class="row">
-        <div class="col-11 col-md-8 mt-5 mx-auto">
+        <div class="col-12 mt-5 mx-auto">
             <h2>Variações de <?php echo the_title(); ?></h2>
         </div>
     </div>
@@ -59,9 +59,10 @@ get_header();
         $image_url = $pic['sizes']['timeline-featured_mobile'];
             
     ?>
-        <div class="col-6 col-lg-2 col-md-4 text-center">
+        <div class="col-6 col-lg-2 text-center">
             <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
             <h3 <?php if( get_sub_field('novo') ) { ?> class="novo"<?php }?> ><?php echo $name; ?></h3>
+            <?php if( get_field('where_to_buy') ) { ?> <a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy" rel="noopener nofollow" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;">Onde comprar</a> <?php }?>
         </div>
 <?php
     endwhile;
