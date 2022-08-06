@@ -37,7 +37,8 @@ function register_my_menus() {
             'footer' => __( 'Rodapé' ),
             'principal' => __( 'Principal' ),
             'social' => __( 'Redes Sociais' ),
-            '404page' => __( 'Página 404' )
+            '404page' => __( 'Página 404' ),
+            'phones' => __( 'Telefones' )
             )
         );
     }

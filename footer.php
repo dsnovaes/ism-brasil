@@ -34,9 +34,13 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 				</div>
 
-				<div class="col-11 col-md-6 col-lg-3 mx-auto social mb-5">
+				<div class="col-11 col-md-6 col-lg-3 mx-auto mb-5">
 					<p>Siga-nos nas redes sociais</p>
-					<?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+					<div class="social">
+						<?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+					</div>
+					<p class="mt-4">Nossos números</p>
+					<?php wp_nav_menu( array( 'theme_location' => 'phones' ) ); ?>
 				</div>
 
 				<div class="col-11 col-md-6 col-lg-3 mx-auto news">
@@ -70,10 +74,11 @@
 								$post_id = get_the_ID();
 								$title = get_the_title();
 								$url = get_field('unidade_local');
+								$url_click = get_field('unidade_link');
 								$address = get_field('unidade_enderco');
 								$phone = get_field('unidade_telefone');
 								echo '<div class="swiper-slide"><h4>' . $title . '</h4>';
-								echo '<address><a href="' . $url . '" data-link="footer-address" rel="nofollow noopener">' . $address . '</a></address><p>' . $phone . '</p></div>';
+								echo '<address><a href="' . $url_click . '" target="_blank" data-link="footer-address" rel="nofollow noopener">' . $address . '</a></address><p>' . $phone . '</p></div>';
 								echo '<script>listUnidades.push({"unidadeID": ' . $post_id . ', "unidadeTitle":"' . $title . '", "unidadeAddress":"' . $address . '", "unidadePhone":"' . $phone . '", "unidadeURL":"' . $url . '", });</script>';
 							endwhile;
 							wp_reset_query();
@@ -125,7 +130,7 @@ swiper.on('slideChange', function () {
 		<div class="footnotes">	
 			<div class="row justify-content-between align-items-center">
 				<div class="col-6 col-md-4">
-					<?php bloginfo( $show = 'description' ) ?>  - CNPJ 01.123.456/0001-78
+					<?php bloginfo( $show = 'description' ) ?>  - CNPJ 10.516.704/0001-75
 				</div>
 				<div class="col-5 col-md-4 text-center">
 					<a href="#top" class="top" data-link="footer-top">Ir para o topo</a>

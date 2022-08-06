@@ -32,6 +32,9 @@ get_header();
         <div class="col-11 col-md-4 mx-auto social">
             <h2>Siga-nos nas redes sociais</h2>
             <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+            <h2>Nossos números</h2>
+            <?php wp_nav_menu( array( 'theme_location' => 'phones' ) ); ?>
+
         </div>
     </div>
 </div>
@@ -102,7 +105,7 @@ get_header();
                     $title = get_sub_field('link_title');
                     $url = get_sub_field('link_url');
                 ?>
-                <li><a href="<?= $url ?>" rel="nofollow noopener" data-link="contacts-links"><?= $title ?></a></p>
+                <li><a href="<?= $url ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=related_links" rel="nofollow noopener" data-link="contacts-links"><?= $title ?></a></p>
                 <?php
                     endwhile;
                 ?>

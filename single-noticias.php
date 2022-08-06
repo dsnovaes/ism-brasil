@@ -52,7 +52,7 @@ function copy(element) {
                     </ul>
                     <p class="post-info">Postado em <?php the_date(); ?></p>
                 </div>
-                <figure class="my-3">
+                <figure class="my-3 text-center">
                     <?php the_post_thumbnail( array( 750 ) ); ?>
                     <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
                 </figure>

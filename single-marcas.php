@@ -48,7 +48,7 @@ get_header();
 ?>
     <div class="row">
         <div class="col-12 mt-5 mx-auto">
-            <h2>Variações de <?php echo the_title(); ?></h2>
+            <h2>Família <?php echo the_title(); ?></h2>
         </div>
     </div>
     <div class="row variacoes mx-auto justify-content-center mb-3">
