@@ -54,7 +54,7 @@ function copy(element) {
                 </div>
                 <figure class="my-3 text-center">
                     <?php the_post_thumbnail( array( 750 ) ); ?>
-                    <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
+                    <figcaption><?php the_post_thumbnail_caption(); ?><br><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
                 </figure>
                 <?php the_content(); ?>
             </article>

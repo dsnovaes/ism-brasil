@@ -42,7 +42,8 @@ get_header();
     $title = get_sub_field('social_title');
     $text = get_sub_field('social_desc');
     $img = get_sub_field('social_image');
-    $img_url = $img['sizes']['timeline-featured_mobile']
+    $img_url = $img['sizes']['timeline-featured_mobile'];
+    $img_description = $img['description'];
 ?>
     <div class="container-fluid my-5">
         <div class="container">
@@ -51,6 +52,7 @@ get_header();
                     <div class="col-12 col-md-5">
                         <figure>
                             <img src="<?= $img_url ?>" alt="<?= $title; ?>">
+                            <figcaption><?= $img_description ?></figcaption>
                         </figure>
                     </div>
                     <div class="col-12 col-md-6 my-5 py-5">
