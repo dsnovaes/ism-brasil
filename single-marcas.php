@@ -62,7 +62,7 @@ get_header();
         <div class="col-6 col-lg-2 text-center">
             <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
             <h3 <?php if( get_sub_field('novo') ) { ?> class="novo"<?php }?> ><?php echo $name; ?></h3>
-            <?php if( get_field('where_to_buy') ) { ?> <a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy" rel="noopener nofollow" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;">Onde comprar</a> <?php }?>
+            <?php if( get_field('where_to_buy') ) { ?> <a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy&utm_content=<?php echo $name; ?>" rel="noopener nofollow" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;">Onde comprar</a> <?php }?>
         </div>
 <?php
     endwhile;
