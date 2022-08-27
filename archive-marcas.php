@@ -59,7 +59,7 @@ get_header();
                             $image = get_field('packshot');
                             $size = 'thumbnail';
                             if( !empty( $image ) ): ?>
-                                <a href="<?php the_permalink(); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></a>
+                                <a href="<?php the_permalink(); ?>" data-link="brands-packshot"><img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" /></a>
                             <?php endif; ?>
                         </div>
                     </div>

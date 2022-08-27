@@ -571,6 +571,9 @@ footer a[href^="tel:"] {
 	.quality_badge {
 		margin-top: 80px;
 	}
+	.swiper-timeline p {
+		font-size: 120%;
+	}
 }
 .quality_badge h3 {
 	color: var(--color-red-primary);
