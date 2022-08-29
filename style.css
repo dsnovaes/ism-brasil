@@ -686,6 +686,27 @@ footer a[href^="tel:"] {
 	
 /* END TRABALHE CONOSCO */
 
+/* START SEJA REVENDEDOR */
+form.wpcf7-form {
+	background: var(--color-green-primary);
+    color: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+	form.wpcf7-form {
+		width: 100%;
+	}
+}
+
+form.wpcf7-form .input-form {
+	width: 100%;
+}
+
+/* END SEJA REVENDEDOR */
 
 /* START CONTATO */
 body.page-template-template-contato #conteudo ul {
