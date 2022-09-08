@@ -174,31 +174,6 @@ endif;
     </div>
 </div>
 <?php
-if( have_rows('leaders') ):
-?>            
-<div class="container valores mb-5 py-5">
-    <div class="row mb-5">
-        <div class="col-12 mx-auto">
-            <h2>Nossa equipe de líderes</h2>   
-            <div class="row">
-                <?php
-                    while( have_rows('leaders') ) : the_row();                            
-                    $name = get_sub_field('leader_name');
-                    $position = get_sub_field('leader_position');
-                ?>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <h3><?php echo $name; ?></h3>
-                    <p><?php echo $position; ?></p>
-                </div>
-                <?php
-                    endwhile;
-                ?>
-            </div>
-        </div>
-    </div>
-</div>
-<?php
-endif;
 if( have_rows('numbers') ):
 ?>            
 <div class="container-fluid orangeGradient numbers">

@@ -120,10 +120,10 @@ article p {
 /* HOME */
 
 body.home h1 {
-	color: var(--color-red-secondary);
+	color: var(--color-black-transparent-darker);
 	font-size: 75%;
 }
-body.home .orangeGradient h2 {
+body.home .greenGradient h2 {
 	color: #fff;
 }
 body.home .bannerHome a {
