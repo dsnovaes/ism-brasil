@@ -92,8 +92,6 @@
 
 <script>
 var swiper = new Swiper('.swiper-unidades', {
-	slidesPerView: 3,
-	spaceBetween: 30,
 	breakpoints: {
 	// when window width is >= 320px
 	320: {
@@ -102,7 +100,7 @@ var swiper = new Swiper('.swiper-unidades', {
 	},
 	// when window width is >= 480px
 	480: {
-		slidesPerView: 3,
+		slidesPerView: 1,
 		spaceBetween: 30
 	},
 	// when window width is >= 640px
@@ -111,7 +109,6 @@ var swiper = new Swiper('.swiper-unidades', {
 		spaceBetween: 90
 	}
 	},
-	slidesPerGroup: 3,
 	loop: true,
 	loopFillGroupWithBlank: true,
 	navigation: {

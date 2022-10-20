@@ -461,6 +461,10 @@ footer .footnotes a.top:hover {
 footer a[href^="tel:"] {
 	font-size: 150%;
 }
+footer a img {
+	max-width: 100%;
+	height: auto;
+}
 /* swiper de unidades no rodapé */
 .swiper-unidades, .swiper-timeline, .swiper-testimonials { 
 	position: relative;
