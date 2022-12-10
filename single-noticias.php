@@ -21,6 +21,20 @@ function copy(element) {
     });
 }
 </script>
+
+<!-- from agua loa
+
+          <figure class="my-3 text-center">
+            <div class="featured">
+            <?php the_post_thumbnail( array( 750 ) ); ?>
+              <figcaption class="credits"><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
+            </div>
+            <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
+          </figure>
+
+-->
+
+
 <div class="container">
     <div class="row mt-3 noticia pt-5">
         <div class="col-1 d-none d-lg-block mb-5 share">
@@ -53,8 +67,11 @@ function copy(element) {
                     <p class="post-info">Postado em <?php the_date(); ?></p>
                 </div>
                 <figure class="my-3 text-center">
-                    <?php the_post_thumbnail( array( 750 ) ); ?>
-                    <figcaption><?php the_post_thumbnail_caption(); ?><br><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
+                    <div class="featured">
+                        <?php the_post_thumbnail( array( 750 ) ); ?>
+                        <figcaption class="credits"><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
+                    </div>
+                    <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
                 </figure>
                 <?php the_content(); ?>
             </article>
