@@ -130,7 +130,7 @@ swiper.on('slideChange', function () {
 					<?php bloginfo( $show = 'description' ) ?>  - CNPJ 10.516.704/0001-75
 				</div>
 				<div class="col-5 col-md-4 text-center">
-					<a href="#top" class="top" data-link="footer-top">Ir para o topo</a>
+					<a class="top" data-link="footer-top">Ir para o topo</a>
 				</div>
 				<div class="col-1 col-md-4 text-end">
 					<a href="https://www.diegonovaes.com" data-link="footer-dev" rel="nofollow noopener"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the designer Diego Novaes" height="20" width="20" /></a>
@@ -141,6 +141,14 @@ swiper.on('slideChange', function () {
 </footer>
 <div class="veryLastBar orangeGradient">
 </div> 
+<script>
+	const btnTop = document.querySelector("footer .footnotes a.top")
+	const theTop = document.querySelector("body")
+	btnTop.addEventListener("click", (e) => {
+		e.preventDefault()
+		theTop.scrollIntoView()
+	})
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
