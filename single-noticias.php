@@ -9,31 +9,6 @@
 get_header();
 ?>
 
-<script>
-function copy(element) {
-    jQuery(function ($) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-        alert("Link da notícia copiado");
-    });
-}
-</script>
-
-<!-- from agua loa
-
-          <figure class="my-3 text-center">
-            <div class="featured">
-            <?php the_post_thumbnail( array( 750 ) ); ?>
-              <figcaption class="credits"><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
-            </div>
-            <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
-          </figure>
-
--->
-
 
 <div class="container">
     <div class="row mt-3 noticia pt-5">
@@ -42,7 +17,7 @@ function copy(element) {
                 <li><a href="https://www.facebook.com/sharer/sharer.php?title=Veja essa notícia!&text=Veja essa notícia: <?php the_title(); ?> Confira mais notícias do Grupo ISM <?php echo get_permalink(); ?>&description=Veja essa notícia!&u=<?php echo get_permalink(); ?>" class="fb rounded-top" data-link="share" social-network="Facebook" title="Compartilhar no Facebook" rel="nofollow noopener"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/intent/tweet?text=&title= &description= &status=Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="tw" rel="nofollow noopener" data-link="share" social-network="Twitter" title="Compartilhar no Twitter"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="https://api.whatsapp.com/send?phone=&text= 😁 Veja essa notícia: <?php the_title(); ?>? Acesse o endereço para descobrir 👉 <?php echo get_permalink(); ?>" class="wapp" title="Compartilhar no WhatsApp" rel="nofollow noopener" data-link="share" social-network="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a href="javascript:copy('#link')" class="url rounded-bottom" data-link="share" title="Copiar link da notícia" rel="nofollow noopener"><i class="fas fa-link"></i></a><span class="d-none" id="link"><?php echo get_permalink(); ?></span></li>
+                <li><a class="url rounded-bottom" data-link="share" title="Copiar link da notícia" rel="nofollow noopener" id="copyLink"><i class="fas fa-link"></i></a></li>
             </ul>
         </div>
 
@@ -171,6 +146,19 @@ function copy(element) {
 
     </div>
 </div>
+<script>
+    const btnCopy = document.getElementById("copyLink")
+    btnCopy.addEventListener("click",(e)=> {
+    e.preventDefault();
+    copyText = "<?= get_permalink(); ?>";
+    navigator.clipboard.writeText(copyText).then(() => {
+        /* clipboard successfully set */
+        alert("Link copiado com sucesso");
+    }, () => {
+        /* clipboard write failed */
+        alert("erro");
+    })});
+</script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
