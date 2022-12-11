@@ -41,13 +41,19 @@ get_header();
                     </ul>
                     <p class="post-info">Postado em <?php the_date(); ?></p>
                 </div>
+                <?php if (has_post_thumbnail()) { ?>
                 <figure class="my-3 text-center">
                     <div class="featured">
                         <?php the_post_thumbnail( array( 750 ) ); ?>
-                        <figcaption class="credits"><?php echo get_post(get_post_thumbnail_id())->post_content; ?></figcaption>
+                        <?php 
+                        $credits = get_post(get_post_thumbnail_id())->post_content;
+                        if ($credits != "") { ?>
+                            <figcaption class="credits"><?= $credits ?></figcaption> 
+                        <?php } ?>
                     </div>
                     <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
                 </figure>
+                <?php } ?>
                 <?php the_content(); ?>
             </article>
         </div>
