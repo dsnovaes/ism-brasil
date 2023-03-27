@@ -49,14 +49,16 @@ get_header();
                             $text = get_sub_field('testimonial_text');
                             $pic = get_sub_field('testimonial_img');
                         ?>
-                        <div class="row swiper-slide justify-content-center align-items-center">
-                            <div class="col-12 col-md-3 mx-3">
-                                <img src="<?php echo $pic; ?>" alt="<?php echo $name; ?>">
-                            </div>
-                            <div class="col-12 col-md-7">
-                                <blockquote><?php echo $text; ?></blockquote>
-                                <h3><?php echo $name; ?></h3>
-                                <p class="position"><?php echo $position; ?></p>
+                        <div class="swiper-slide">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-12 col-md-3 mx-3">
+                                    <img src="<?php echo $pic; ?>" alt="<?php echo $name; ?>">
+                                </div>
+                                <div class="col-12 col-md-7">
+                                    <blockquote><?php echo $text; ?></blockquote>
+                                    <h3><?php echo $name; ?></h3>
+                                    <p class="position"><?php echo $position; ?></p>
+                                </div>
                             </div>
                         </div>
                         <?php
