@@ -133,7 +133,7 @@ swiper.on('slideChange', function () {
 					<a class="top" data-link="footer-top">Ir para o topo</a>
 				</div>
 				<div class="col-1 col-md-4 text-end">
-					<a href="https://www.diegonovaes.com.br" data-link="footer-dev" rel="nofollow noopener"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Logo of the developer Diego Novaes" height="20" width="20" /></a>
+					<a href="https://www.diegonovaes.com.br" data-link="footer-dev" rel="nofollow noopener"><img src="<?php echo get_template_directory_uri() ?>/img/diego-novaes.svg" alt="Developer Diego Novaes" height="20" width="20" /></a>
 				</div>
 			</div>
 		</div>
