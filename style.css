@@ -679,6 +679,8 @@ footer a img {
 	color: #fff;
 	background-color: var(--color-black-transparent);
 	font-style: normal;
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 @media screen and (max-width: 992px) {
