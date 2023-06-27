@@ -140,8 +140,38 @@ swiper.on('slideChange', function () {
 	</div>
 </footer>
 <div class="veryLastBar orangeGradient">
-</div> 
+</div>
+
+<div class="confirmAge">
+	<div class="whiteBox">
+		<h4>Você tem 18 anos ou mais?</h4>
+		<button data-action="yes" class="btn btn-success">Sim</button> <button data-action="no" class="btn btn-danger">Não</button>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script>
+	const modalAge = document.querySelector(".confirmAge");
+	document.querySelector("button[data-action=yes]").addEventListener("click",(e)=>{
+		e.preventDefault()
+		confirmIsAdult()
+	});
+	const myCookie = document.cookie;
+	let expires = new Date();
+	expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000)); 
+
+
+	if (myCookie.split("; ").indexOf("isAdult=true") === -1) {
+		modalAge.setAttribute("style","display:flex;")
+	}
+
+	function confirmIsAdult() {
+		document.cookie = 'isAdult=true; expires=' + expires.toUTCString() + '; path=/';
+		modalAge.removeAttribute("style")
+		modalAge.setAttribute("style","display:none")
+	}
+
 	const btnTop = document.querySelector("footer .footnotes a.top")
 	const theTop = document.querySelector("body")
 	btnTop.addEventListener("click", (e) => {
@@ -149,8 +179,6 @@ swiper.on('slideChange', function () {
 		theTop.scrollIntoView()
 	})
 </script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
 </body>
 </html>

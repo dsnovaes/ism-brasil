@@ -16,6 +16,7 @@
     --shadow: rgba(0, 162, 86, 0.15);
     --color-black-transparent: rgba(0,0,0,0.15);
     --color-black-transparent-darker: rgba(0,0,0,0.3);
+    --color-green-transparent: rgba(0,163,86,0.75);
 }
 ::selection {
     background: var(--color-green-primary);
@@ -842,6 +843,8 @@ body.page-template-template-contato footer {
 	background-color: var(--color-black-transparent-darker);
 	font-style: normal;
     font-size: 70%;
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /* ESTILO DENTRO DA NOTICIA */
@@ -915,3 +918,31 @@ body.single-marcas #conteudo img {
 .variacoes img {
 	max-height: 120px;
 }
+
+
+/* modal age */
+
+.confirmAge {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	background-color: var(--color-green-transparent);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+.confirmAge .whiteBox {
+	background-color: white;
+	z-index: 9999;
+	border-radius: 4px;
+	padding: 30px;
+	box-shadow: 0 0 16px var(--color-black-transparent-darker);
+}
+
+/* adenauernovaes@gmail.com */
