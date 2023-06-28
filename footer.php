@@ -143,7 +143,6 @@ swiper.on('slideChange', function () {
 </div>
 <?php
 if ($args[0] == "glow") { ?>
-<script>alert(`this is the brand <?= $args[0] ?>`);</script>
 <div class="confirmAge">
 	<div class="whiteBox">
 		<h4>Você tem 18 anos ou mais?</h4>
