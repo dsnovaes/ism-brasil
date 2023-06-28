@@ -141,7 +141,9 @@ swiper.on('slideChange', function () {
 </footer>
 <div class="veryLastBar orangeGradient">
 </div>
-
+<?php
+$slug = get_post_field( 'post_name', get_post() );
+if ($slug == "glow") { ?>
 <div class="confirmAge">
 	<div class="whiteBox">
 		<h4>Você tem 18 anos ou mais?</h4>
@@ -149,14 +151,17 @@ swiper.on('slideChange', function () {
 	</div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script>
 	const modalAge = document.querySelector(".confirmAge");
 	document.querySelector("button[data-action=yes]").addEventListener("click",(e)=>{
 		e.preventDefault()
 		confirmIsAdult()
 	});
+	document.querySelector("button[data-action=yes]").addEventListener("click",(e)=>{
+		e.preventDefault()
+		window.location.href = "https://grupoism.com.br/consumo-responsavel";
+	});
+	
 	const myCookie = document.cookie;
 	let expires = new Date();
 	expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000)); 
@@ -179,6 +184,8 @@ swiper.on('slideChange', function () {
 		theTop.scrollIntoView()
 	})
 </script>
-
+<?php } ?>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 </html>
