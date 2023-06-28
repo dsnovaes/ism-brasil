@@ -197,5 +197,6 @@ if( $related->have_posts() ) {
 </aside>
             
 <?php
-get_footer();
+$args = [strtolower(get_the_title())];
+get_footer("",$args);
 ?>

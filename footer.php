@@ -142,8 +142,8 @@ swiper.on('slideChange', function () {
 <div class="veryLastBar orangeGradient">
 </div>
 <?php
-$slug = get_post_field( 'post_name', get_post() );
-if ($slug == "glow") { ?>
+if ($args[0] == "glow") { ?>
+<script>alert(`this is the brand <?= $args[0] ?>`);</script>
 <div class="confirmAge">
 	<div class="whiteBox">
 		<h4>Você tem 18 anos ou mais?</h4>
@@ -157,7 +157,7 @@ if ($slug == "glow") { ?>
 		e.preventDefault()
 		confirmIsAdult()
 	});
-	document.querySelector("button[data-action=yes]").addEventListener("click",(e)=>{
+	document.querySelector("button[data-action=no]").addEventListener("click",(e)=>{
 		e.preventDefault()
 		window.location.href = "https://grupoism.com.br/consumo-responsavel";
 	});
@@ -184,7 +184,7 @@ if ($slug == "glow") { ?>
 		theTop.scrollIntoView()
 	})
 </script>
-<?php } ?>
+<?php }; ?>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
