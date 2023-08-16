@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <title>Internal User</title>
+</head>
+<body>
+<script>
+if (document.cookie.split("; ").indexOf("internal=true") === -1) {
+    document.cookie = `internal=true; path=/`;
+    alert("Cookie created")
+} else {
+    alert("Cookie found. Redirecting you");
+}
+window.location.href = "https://grupoism.com.br";
+</script>
+</body>
+</html>
