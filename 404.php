@@ -28,7 +28,7 @@ get_header();
                 <ul>
                     <?php
                         // A Consulta
-                        query_posts( 'cat=2' );
+                        query_posts( 'post_type=marcas' );
 
                         // O Loop
                         while ( have_posts() ) : the_post();
@@ -44,11 +44,11 @@ get_header();
                     ?>
                 </ul>
             </div>
-            <div class="col-11 col-md-6 col-lg-3 mx-auto pb-5 news">
+            <div class="col-11 col-md-6 col-lg-6 mx-auto pb-5 news">
                 <p>Últimas Notícias</p>
                 <ul>
                 <?php
-                    query_posts( 'cat=1&orderby=date&order=DESC&posts_per_page=4' );
+                    query_posts( 'post_type=noticias&orderby=date&order=DESC&posts_per_page=4' );
 
                     while ( have_posts() ) : the_post();
                         echo '<li><a href="';
@@ -60,9 +60,6 @@ get_header();
                     wp_reset_query();
                 ?>
                 </ul>
-            </div>
-            <div class="col-11 col-md-6 col-lg-3 pb-5">
-                Outros
             </div>
         </div>
     </div>
