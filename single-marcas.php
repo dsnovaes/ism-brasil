@@ -22,7 +22,7 @@ get_header();
                         <h1><?php echo the_title(); ?></h1>
                     </div>
                     <div class="col-6 text-end">
-                    <?php if( get_field('where_to_buy') ) { ?> <p class="m-0"><a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy" rel="noopener" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Onde comprar <?php echo the_title(); ?></a></p> <?php }?>
+                    <?php if( get_field('link_ml') ) { ?> <p class="m-0"><a href="<?php the_field('link_ml'); ?>" rel="nofollow noopener" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Comprar <?php echo the_title(); ?> agora</a></p> <?php } else if( get_field('where_to_buy') ) { ?> <p class="m-0"><a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy" rel="noopener" style="color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Onde comprar <?php echo the_title(); ?></a></p> <?php }?>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ get_header();
         <div class="col-6 col-lg-2 text-center">
             <img src="<?= $image_url; ?>" alt="<?php echo the_title(); ?> - <?php echo $name; ?>"> 
             <h3 <?php if( get_sub_field('novo') ) { ?> class="novo"<?php }?> ><?php echo $name; ?></h3>
-            <?php if( get_field('where_to_buy') ) { ?> <a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy&utm_content=<?php echo $name; ?>" rel="noopener nofollow" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;">Onde comprar</a> <?php }?>
+            <?php if( get_field('link_ml') ) { ?> <p class="m-0"><a href="<?php the_field('link_ml'); ?>" rel="nofollow noopener" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;" data-link="brands">Comprar agora</a> <?php } else if( get_field('where_to_buy') ) { ?> <a href="<?php the_field('where_to_buy'); ?>?utm_source=grupoism.com.br&utm_medium=referral&utm_campaign=where_to_buy&utm_content=<?php echo $name; ?>" rel="noopener nofollow" class="btn-ism" style="background:<?php the_field('cor_da_marca'); ?>; border-color: <?php the_field('cor_da_marca'); ?> !important; color: <?php the_field('cor_secundaria'); ?> !important;">Onde comprar</a> <?php }?>
         </div>
 <?php
     endwhile;
