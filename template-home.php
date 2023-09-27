@@ -69,7 +69,7 @@ get_header();
                                 <h2><a href="<?php the_permalink(); ?>" data-link="brands-title"><?php the_title(); ?></a></h2>
                                 <?php $excerpt = get_the_excerpt(); ?>
                                 <p title="<?= $excerpt ?>"><?= $excerpt ?></p>
-                                <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a></p>
+                                <p><a href="<?php the_permalink(); ?>" class="greenGradient" rel="nofollow" data-link="brands-knowmore">Saiba mais</a> <?php if( get_field('link_ml') ) { ?><a href="<?php the_field('link_ml'); ?>" rel="nofollow" class="greenGradient" data-link="brands-buy">Comprar agora</a><?php }; ?></p>
                             </div>
                         </div>
                         <div class="col-4">
