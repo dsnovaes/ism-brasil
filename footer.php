@@ -1,3 +1,10 @@
+<div class="container text-center" id="relatorio">
+<h5>Relatório de transparência e igualdade salarial de mulheres e homens</h5>
+    <p>Conforme determinação do Ministério do Trabalho e Emprego (MTE), divulgamos o “Relatório de transparência salarial”, elaborado e disponibilizado pelo próprio MTE, que dispõe sobre a igualdade salarial e os critérios remuneratórios entre homens e mulheres.</p>
+    <p><a href="https://grupoism.com.br/wp-content/uploads/2024/04/RELATÓRIO-ISM.pdf">Relatório de Transparência Salarial 2024</a></p>
+    <p><a href="https://grupoism.com.br/wp-content/uploads/2024/04/RELATÓRIO-SML.pdf">Relatório de Transparência Salarial 2024</a></p>
+    <p>Fonte: eSocial. Rais 2022 e Portal Emprega Brasil mar.2024</p>
+</div>
 <footer class="greenGradient">
 	<div class="container">
 			<div class="row pt-5 pb-4">
@@ -127,7 +134,7 @@ swiper.on('slideChange', function () {
 		<div class="footnotes">	
 			<div class="row justify-content-between align-items-center">
 				<div class="col-6 col-md-4">
-					<?php bloginfo( $show = 'description' ) ?>  - CNPJ 10.516.704/0001-75
+					<?php bloginfo( $show = 'description' ) ?>  - CNPJ <a href="https://infocnpj.com/10516704000175-bebidas-sao-miguel" class="cnpj">10.516.704/0001-75</a>
 				</div>
 				<div class="col-5 col-md-4 text-center">
 					<a class="top" data-link="footer-top">Ir para o topo</a>
