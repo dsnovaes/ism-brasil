@@ -1,9 +1,9 @@
 <div class="container text-center" id="relatorio">
 <h5>Relatório de transparência e igualdade salarial de mulheres e homens</h5>
     <p>Conforme determinação do Ministério do Trabalho e Emprego (MTE), divulgamos o “Relatório de transparência salarial”, elaborado e disponibilizado pelo próprio MTE, que dispõe sobre a igualdade salarial e os critérios remuneratórios entre homens e mulheres.</p>
-    <p><a href="https://grupoism.com.br/wp-content/uploads/2024/04/RELATÓRIO-ISM.pdf">Relatório de Transparência Salarial 2024</a></p>
-    <p><a href="https://grupoism.com.br/wp-content/uploads/2024/04/RELATÓRIO-SML.pdf">Relatório de Transparência Salarial 2024</a></p>
-    <p>Fonte: eSocial. Rais 2022 e Portal Emprega Brasil mar.2024</p>
+    <p><a href="https://grupoism.com.br/wp-content/uploads/2025/03/Relatório-Transparência-Salarial-ISM-2025.1.pdf">Relatório de Transparência Salarial 2025</a></p>
+    <p><a href="https://grupoism.com.br/wp-content/uploads/2025/03/Relatório-Transparência-Salarial-SML-2025.1.pdf">Relatório de Transparência Salarial 2025</a></p>
+    <p>Fonte: eSocial. Rais 2024 e Portal Emprega Brasil - Fevereiro de 2025</p>
 </div>
 <footer class="greenGradient">
 	<div class="container">

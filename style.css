@@ -2,11 +2,12 @@
 
  Theme Name:   ism-brasil
  Author:       Diego Novaes
- Author URI:   https://diegonovaes.com
+ Author URI:   https://diegonovaes.com.br
 */
 :root {
     --color-green-primary: #00A256;
     --color-green-secondary: #00B759;
+	--color-green-culture: #003E09;
     --color-red-primary: #FD1A19;
     --color-red-secondary: #FF8223;
     --color-grey-primary: #666;
@@ -518,6 +519,9 @@ footer a img {
 .swiper-timeline .swiper-button-next, .swiper-timeline .swiper-button-prev {
 	color: #fff;
 }
+.timeline .swiper-slide {
+	display:inherit;
+}
 .swiper-timeline h3 {
 	font-size: 320%;
     font-weight: 900;
@@ -540,27 +544,27 @@ footer a img {
 
 @media screen and (min-width: 1760px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat left 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bigNumbers_2025.png) no-repeat left 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1500px) and (max-width: 1759px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -20% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bigNumbers_2025.png) no-repeat -20% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1300px) and (max-width: 1499px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -30% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bigNumbers_2025.png) no-repeat -30% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }
 @media screen and (min-width: 1150px) and (max-width: 1299px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -50% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bigNumbers_2025.png) no-repeat -50% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }	
 @media screen and (min-width: 1024px) and (max-width: 1149px) {
 	.numbers {
-		background: url(img/bgNumbers.png) no-repeat -80% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
+		background: url(img/bigNumbers_2025.png) no-repeat -80% 130px, linear-gradient(90deg, var(--color-red-primary) 0%, var(--color-red-secondary) 100%) ;
 	}
 }	
 .map_operations img {
@@ -597,6 +601,23 @@ footer a img {
 .quality_badge img{
 	margin: -30% auto 15px auto;
 	max-width: 100%;
+}
+.culture .verb {
+	background-color: var(--color-green-culture);
+	color: #fff;
+	border-radius: 50px;
+	font-size: 125%;
+}
+.culture .text {
+	font-size: 125%;
+}
+.culture .verbs {
+	column-gap: 30px;
+}
+@media screen and (max-width: 767px) {
+	.culture .verb {
+		flex:none;
+	}
 }
 /* END SOBRE */
 
